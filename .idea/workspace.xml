@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/Pereche.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/Prietenie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/parser/EntityParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/parser/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/parser/UserParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/validation/PrietenieValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/validation/UserValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/validation/Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptii/DuplicatedElementException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptii/MyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptii/NotExistentException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptii/ParsingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptii/RepositoryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptii/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graf/Graf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graf/GrafListeMuchii.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repo/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repo/memory/AbstractInMemoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repo/memory/InMemoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/ServiceCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GY5Bt3RgE4llR8NHinBmVANtnQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="" />
+      <created>1666552547180</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666552547180</updated>
+      <workItem from="1666552548839" duration="638000" />
+      <workItem from="1666553201515" duration="3875000" />
+      <workItem from="1666632289354" duration="3375000" />
+      <workItem from="1666956021923" duration="5996000" />
+      <workItem from="1667036282974" duration="10288000" />
+      <workItem from="1667051540002" duration="651000" />
+      <workItem from="1667055011337" duration="942000" />
+      <workItem from="1667056338775" duration="1937000" />
+      <workItem from="1667120775287" duration="1638000" />
+      <workItem from="1667125551093" duration="7474000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+</project>
