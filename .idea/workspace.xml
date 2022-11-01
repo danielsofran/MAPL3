@@ -4,46 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/graf/GrafListaAdiacenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/prietenii/ServicePrietenii.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/user/ServiceUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/UI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/console/UIConsole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/console/UIUseri.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Pair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="doc1">
+      <change afterPath="$PROJECT_DIR$/src/graf/AlgoritmiGraf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Pereche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Pereche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Prietenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Prietenie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/parser/EntityParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/parser/UserParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/parser/UserParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/validation/PrietenieValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/validation/PrietenieValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/validation/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/validation/UserValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/validation/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/validation/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptii/DuplicatedElementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/DuplicatedElementException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptii/MyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/MyException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptii/NotExistentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/NotExistentException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptii/ParsingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/ParsingException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptii/RepositoryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/RepositoryException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptii/ValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/ValidationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graf/Graf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graf/Graf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graf/GrafListeMuchii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graf/GrafListeMuchii.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/memory/AbstractInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/memory/AbstractInMemoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/memory/InMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/memory/InMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graf/GrafListaAdiacenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graf/GrafListaAdiacenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graf/GrafListeMuchii.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ServiceCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/prietenii/ServicePrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/prietenii/ServicePrietenii.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/user/ServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user/ServiceUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Pereche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Pereche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +139,7 @@
       <workItem from="1667325841384" duration="77000" />
       <workItem from="1667325931083" duration="992000" />
       <workItem from="1667326940812" duration="139000" />
-      <workItem from="1667327091718" duration="2157000" />
+      <workItem from="1667327091718" duration="5131000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1667133206595</created>
@@ -173,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667133206595</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="doc1">
+      <created>1667329293640</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667329293640</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +174,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="doc1" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc1" />
   </component>
 </project>

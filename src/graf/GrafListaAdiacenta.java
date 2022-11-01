@@ -11,15 +11,28 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
     private Map<Nod, Set<Muchie>> G;
     private Map<Nod, Boolean> deleted;
 
+    /**
+     * Constructorul clasei
+     */
     public GrafListaAdiacenta(){
         G = new HashMap<>();
         deleted = new HashMap<>();
     }
 
+    /**
+     * verifica daca un nod exista in graf
+     * @param nod - nodul de verificat
+     * @return true - daca nodul exista in graf, false - altfel
+     */
     public Boolean hasNod(Nod nod){
         return G.containsKey(nod) && (!deleted.containsKey(nod) || !deleted.get(nod));
     }
 
+    /**
+     * adauga un nod in graf
+     * @param nod - nodul de adaugat
+     * @throws DuplicatedElementException
+     */
     @Override
     public void addNod(Nod nod) throws DuplicatedElementException {
         if(!G.containsKey(nod)){
@@ -31,6 +44,11 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         //else throw new DuplicatedElementException("Nod duplicat!");
     }
 
+    /**
+     * adauga o muchie in graf
+     * @param muchie - muchia de adaugat
+     * @throws DuplicatedElementException
+     */
     @Override
     public void addMuchie(Muchie muchie) throws DuplicatedElementException {
         Nod nod1 = muchie.getFirst();
@@ -41,6 +59,11 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         G.get(nod2).add(muchie);
     }
 
+    /**
+     * sterge un nod din graf
+     * @param nod - nodul de sters
+     * @throws NotExistentException
+     */
     @Override
     public void removeNod(Nod nod) throws NotExistentException {
         if(hasNod(nod))
@@ -51,6 +74,11 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         else throw new NotExistentException("Nod inexistent!");
     }
 
+    /**
+     * sterge o muchie din graf
+     * @param muchie - muchia de sters
+     * @throws NotExistentException - daca muchia nu exista in graf
+     */
     @Override
     public void removeMuchie(Muchie muchie) throws NotExistentException {
         Nod nod1 = muchie.getFirst();
@@ -61,6 +89,12 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         G.get(nod2).removeIf(m -> m.equals(muchie));
     }
 
+    /**
+     * updateaza un nod din graf
+     * @param nod - nodul care trebuie updatat
+     * @param newNod - nodul cu care se face update
+     * @throws NotExistentException - daca nodul nu exista in graf
+     */
     @Override
     public void updateNod(Nod nod, Nod newNod) throws NotExistentException {
         Set<Muchie> muchii = G.get(nod);
@@ -75,6 +109,12 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         G.put(newNod, muchii);
     }
 
+    /**
+     * updateaza o muchie din graf
+     * @param muchie - muchia de updatat
+     * @param newMuchie - muchia cu care se face update
+     * @throws NotExistentException - daca muchia nu exista in graf
+     */
     @Override
     public void updateMuchie(Muchie muchie, Muchie newMuchie) throws NotExistentException {
         Nod nod1 = muchie.getFirst();
@@ -89,6 +129,11 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         G.get(newMuchie.getSecond()).add(newMuchie);
     }
 
+    /**
+     * determina vecinii unui nod din graf
+     * @param nod - nodul pentru care se determina vecinii
+     * @return - setul de vecini
+     */
     public Set<Nod> getVecini(Nod nod){
         Set<Nod> vecini = new HashSet<>();
         G.get(nod).forEach(muchie -> {
@@ -102,6 +147,11 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         return vecini;
     }
 
+    /**
+     * determina muchiile incidente unui nod din graf
+     * @param nod - nodul pentru care se determina muchiile incidente
+     * @return - setul de muchii incidente
+     */
     public Set<Muchie> getMuchiiAdiacente(Nod nod){
         Set<Muchie> rez = new HashSet<>();
         G.get(nod).forEach(muchie -> {
@@ -115,97 +165,20 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         return rez;
     }
 
+    /**
+     * determina toate nodurile din graf
+     * @return - setul de noduri
+     */
     @Override
     public Set<Nod> getNoduri(){
         return G.keySet();
     }
 
-    private void BFS(Nod source, Map<Nod, Boolean> visited, Map<Nod, Nod> parent, Map<Nod, Integer> distance){
-        Queue<Nod> Q = new LinkedList<>();
-        Q.add(source);
-        visited.put(source, true);
-        parent.put(source, null);
-        distance.put(source, 0);
-        while(!Q.isEmpty()){
-            Nod nod = Q.poll();
-            for(Nod vecin : getVecini(nod)){
-                if(!visited.get(vecin)){
-                    visited.put(vecin, true);
-                    parent.put(vecin, nod);
-                    distance.put(vecin, distance.get(nod) + 1);
-                    Q.add(vecin);
-                }
-            }
-        }
-    }
-
-
-    private Integer dmax = 0;
-    public void BackDrum(Nod source, Map<Nod, Boolean> visited, Map<Nod, Integer> distance){
-        for(Nod nod : getVecini(source)){
-            if(!visited.get(nod)){
-                visited.put(nod, true);
-                int d = distance.get(source) + 1;
-                distance.put(nod, d);
-                if(d > dmax) dmax = d;
-                BackDrum(nod, visited, distance);
-                visited.put(nod, false);
-                distance.put(nod, d-1);
-            }
-        }
-    }
-
-    public Pair<GrafListaAdiacenta<Nod, Muchie>, Integer> componentWithLongestPath(){
-        int dmaxall = -1;
-        GrafListaAdiacenta<Nod, Muchie> compmax = new GrafListaAdiacenta<>();
-        for(GrafListaAdiacenta<Nod, Muchie> comp : componenteConexe()){
-            Set<Nod> noduri = comp.getNoduri();
-            // get first element of noduri
-            Iterator<Nod> it = noduri.iterator();
-            Nod source = it.next();
-            Map<Nod, Boolean> visited = new HashMap<>();
-            Map<Nod, Integer> distance = new HashMap<>();
-            for(Nod nod : noduri){
-                visited.put(nod, false);
-                distance.put(nod, 0);
-            }
-            visited.put(source, true);
-            BackDrum(source, visited, distance);
-            if(dmax > dmaxall) {
-                dmaxall = dmax;
-                compmax = comp;
-            }
-        }
-        return new Pair<>(compmax, dmaxall);
-    }
-
-    public Pair<GrafListaAdiacenta<Nod, Muchie>, Integer> componentWithLongestPath2(){
-        int dmax = -1;
-        Nod source = null;
-        Map<Nod, Nod> parent = new HashMap<>();
-        Map<Nod, Boolean> visited = new HashMap<>();
-        Map<Nod, Integer> distance = new HashMap<>();
-        for(Nod nod : getNoduri()){
-            visited.put(nod, false);
-            parent.put(nod, null);
-            distance.put(nod, 0);
-        }
-        for(Nod nod : G.keySet()){
-            BFS(nod, visited, parent, distance);
-            int d = distance.values().stream().max(Integer::compareTo).get();
-            if(d > dmax){
-                dmax = d;
-                source = nod;
-            }
-            for(Nod nod2 : G.keySet()){
-                visited.put(nod2, false);
-                parent.put(nod2, null);
-                distance.put(nod2, 0);
-            }
-        }
-        return new Pair<>(componentaConexa(source), dmax);
-    }
-
+    /**
+     * determina componenta conexa pornind de la un nod
+     * @param source - nodul sursa
+     * @return - componenta conexa determinata de nodul sursa
+     */
     public GrafListaAdiacenta<Nod, Muchie> componentaConexa(Nod source){
         GrafListaAdiacenta<Nod, Muchie> graf = new GrafListaAdiacenta<>();
         Queue<Nod> queue = new LinkedList<>();
@@ -231,6 +204,10 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         return graf;
     }
 
+    /**
+     * determina componentele conexe ale grafului
+     * @return - lista de componente conexe
+     */
     public List<GrafListaAdiacenta<Nod, Muchie>> componenteConexe(){
         List<GrafListaAdiacenta<Nod, Muchie>> grafuri = new LinkedList<>();
         Map<Nod, Boolean> visited = new HashMap<>();

@@ -21,6 +21,10 @@ public class Service {
     private ServiceUser userService;
     private ServicePrietenii prietenieService;
 
+    /**
+     * Constructorul clasei Service
+     * initializeaza parserele, validatoarele, repository-urile, graful si serviciile
+     */
     public Service(){
         userParser = new UserParser();
         prietenieParser = new PrietenieParser();
@@ -33,10 +37,16 @@ public class Service {
         prietenieService = new ServicePrietenii(repoPrietenii, repoUser, prietenieParser, grafPrietenii);
     }
 
+    /**
+     * @return serviciul de user
+     */
     public ServiceUser getServiceUser(){
         return userService;
     }
 
+    /**
+     * @return serviciul de prietenie
+     */
     public ServicePrietenii getServicePrietenii(){
         return prietenieService;
     }
