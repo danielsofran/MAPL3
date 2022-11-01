@@ -8,7 +8,7 @@ public abstract class Parser<T> {
      * @param strings - stringurile de parsat
      * @param number - numarul de stringuri asteptat
      * @param nume - numele entitatii
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException - daca stringurile sunt null sau numarul de stringuri nu este cel corect
      */
     protected void checkNumber(String[] strings, int number, String nume) throws IllegalArgumentException {
         if(strings == null)
@@ -21,7 +21,7 @@ public abstract class Parser<T> {
      * parseaza un vector string in entitatea corespunzatoare
      * @param strings - vectorul de stringuri
      * @return entitatea corespunzatoare
-     * @throws ParsingException
+     * @throws ParsingException - daca parsarea nu este posibila
      */
     public abstract T parse(String[] strings) throws ParsingException;
 
@@ -29,10 +29,10 @@ public abstract class Parser<T> {
      * parseaza un string in id
      * @param string - stringul
      * @return Long - id-ul
-     * @throws ParsingException
+     * @throws ParsingException - daca parsarea nu este posibila
      */
     public Long parseId(String string) throws ParsingException {
-        long id = -1L;
+        long id;
         try{
             id = Long.parseLong(string);
         }

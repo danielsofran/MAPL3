@@ -13,6 +13,8 @@ public class AlgoritmiGraf {
      * @param visited - map in care se retin nodurile vizitate
      * @param parent - map in care se retin parintii nodurilor
      * @param distance - map in care se retin distantele nodurilor
+     * @param <Nod> - tipul nodurilor
+     * @param <Muchie> - tipul muchiilor
      */
     protected static <Nod, Muchie extends Pereche<Nod>> void BFS(GrafListaAdiacenta<Nod, Muchie> graf, Nod source, Map<Nod, Boolean> visited, Map<Nod, Nod> parent, Map<Nod, Integer> distance){
         Queue<Nod> Q = new LinkedList<>();
@@ -40,6 +42,8 @@ public class AlgoritmiGraf {
      * @param visited - map in care se retin nodurile vizitate
      * @param parent - map in care se retin parintii nodurilor
      * @param distance - map in care se retin distantele nodurilor
+     * @param <Nod> - tipul nodurilor
+     * @param <Muchie> - tipul muchiilor
      */
     protected static <Nod, Muchie extends Pereche<Nod>> void DFS(GrafListaAdiacenta<Nod, Muchie> graf, Nod source, Map<Nod, Boolean> visited, Map<Nod, Nod> parent, Map<Nod, Integer> distance){
         Stack<Nod> S = new Stack<>();
@@ -67,7 +71,9 @@ public class AlgoritmiGraf {
      * @param graf - graful in care se cauta cel mai lung drum
      * @param source - nodul sursa
      * @param visited - map in care se retin nodurile vizitate
-     * @param distance - map in care se retin distantele nodurilor
+     * @param distance - map in care se retin distantele nodurile
+     * @param <Nod> - tipul nodurilor
+     * @param <Muchie> - tipul muchiilor
      */
     public static <Nod, Muchie extends Pereche<Nod>> void BackDrum(GrafListaAdiacenta<Nod, Muchie> graf, Nod source, Map<Nod, Boolean> visited, Map<Nod, Integer> distance){
         for(Nod nod : graf.getVecini(source)){
@@ -88,6 +94,8 @@ public class AlgoritmiGraf {
      * algoritm: Backtracking
      * @param graf - graful in care se cauta componenta
      * @return - perechea formata din componenta care contine cel mai lung drum si lungimea acestuia
+     * @param <Nod> - tipul nodurilor
+     * @param <Muchie> - tipul muchiilor
      */
     public static <Nod, Muchie extends Pereche<Nod>> Pair<GrafListaAdiacenta<Nod, Muchie>, Integer> componentWithLongestPath(GrafListaAdiacenta<Nod, Muchie> graf){
         int dmaxall = -1;
@@ -119,6 +127,8 @@ public class AlgoritmiGraf {
      * algoritm: n BFS-uri
      * @param graf - graful in care se cauta componenta
      * @return - perechea formata din componenta care contine cel mai lung drum si lungimea acestuia
+     * @param <Nod> - tipul nodurilor
+     * @param <Muchie> - tipul muchiilor
      */
     public static <Nod, Muchie extends Pereche<Nod>> Pair<GrafListaAdiacenta<Nod, Muchie>, Integer> componentWithLongestPath2(GrafListaAdiacenta<Nod, Muchie> graf){
         int dmax = -1;

@@ -3,7 +3,6 @@ package graf;
 import utils.Pereche;
 import exceptii.DuplicatedElementException;
 import exceptii.NotExistentException;
-import utils.Pair;
 
 import java.util.*;
 
@@ -31,7 +30,7 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
     /**
      * adauga un nod in graf
      * @param nod - nodul de adaugat
-     * @throws DuplicatedElementException
+     * @throws DuplicatedElementException - daca nodul exista deja in graf
      */
     @Override
     public void addNod(Nod nod) throws DuplicatedElementException {
@@ -47,7 +46,7 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
     /**
      * adauga o muchie in graf
      * @param muchie - muchia de adaugat
-     * @throws DuplicatedElementException
+     * @throws DuplicatedElementException - daca muchia exista deja in graf
      */
     @Override
     public void addMuchie(Muchie muchie) throws DuplicatedElementException {
@@ -62,7 +61,7 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
     /**
      * sterge un nod din graf
      * @param nod - nodul de sters
-     * @throws NotExistentException
+     * @throws NotExistentException - daca nodul nu exista in graf
      */
     @Override
     public void removeNod(Nod nod) throws NotExistentException {

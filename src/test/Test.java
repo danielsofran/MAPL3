@@ -1,21 +1,18 @@
 package test;
 
 import domain.Prietenie;
-import domain.User;
 import exceptii.DuplicatedElementException;
 import exceptii.NotExistentException;
 import exceptii.ValidationException;
 import service.Service;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Test {
     /**
      * test
+     * @param args - args
      */
     public static void main(String[] args) {
         Service service = new Service();

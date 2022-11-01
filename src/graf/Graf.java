@@ -32,15 +32,15 @@ public interface Graf<Nod, Muchie extends Pereche<Nod>> {
      */
     void removeMuchie(Muchie muchie) throws NotExistentException;
     /**
-     * Verifica daca un nod exista in graf
-     * @param nod - nodul de verificat
-     * @return true - daca nodul exista in graf, false - altfel
+     * updateaza un nod din graf
+     * @param nod - nodul vechi
+     * @param newNod - nodul nou
      */
     void updateNod(Nod nod, Nod newNod) throws NotExistentException;
     /**
      * Verifica daca o muchie exista in graf
      * @param muchie - muchia de verificat
-     * @return true - daca muchia exista in graf, false - altfel
+     * @param newMuchie - muchia noua
      */
     void updateMuchie(Muchie muchie, Muchie newMuchie) throws NotExistentException;
 

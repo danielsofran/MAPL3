@@ -53,7 +53,7 @@ public class Entity<ID> implements Serializable {
 
     /**
      * entity cannot be cloned
-     * @throws CloneNotSupportedException
+     * @throws CloneNotSupportedException - nici o entitate nu poate fi clonata
      */
     @Override
     protected Object clone() throws CloneNotSupportedException {
