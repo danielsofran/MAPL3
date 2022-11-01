@@ -1,6 +1,6 @@
 package graf;
 
-import domain.Pereche;
+import utils.Pereche;
 import exceptii.DuplicatedElementException;
 import exceptii.NotExistentException;
 
@@ -96,12 +96,10 @@ public class GrafListeMuchii<Nod, Muchie extends Pereche<Nod>> implements Graf<N
         return new LinkedList<>(noduri);
     }
 
-    @Override
     public List<Muchie> getMuchii() {
         return muchii;
     }
 
-    @Override
     public List<Nod> getVecini(Nod nod) {
         List<Nod> vecini = new LinkedList<>();
         for(Muchie muchie : muchii)
@@ -112,7 +110,6 @@ public class GrafListeMuchii<Nod, Muchie extends Pereche<Nod>> implements Graf<N
         return vecini;
     }
 
-    @Override
     public List<Muchie> getMuchiiOut(Nod nod) {
         List<Muchie> muchiiOut = new LinkedList<>();
         for(Muchie muchie : muchii)
@@ -121,17 +118,14 @@ public class GrafListeMuchii<Nod, Muchie extends Pereche<Nod>> implements Graf<N
         return muchiiOut;
     }
 
-    @Override
     public int getGrad(Nod nod) {
         return getVecini(nod).size();
     }
 
-    @Override
     public int getNrNoduri() {
         return noduri.size();
     }
 
-    @Override
     public int getNrMuchii() {
         return muchii.size();
     }

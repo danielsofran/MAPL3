@@ -1,4 +1,4 @@
-package domain;
+package utils;
 
 public interface Pereche<T> {
     T getFirst();

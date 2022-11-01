@@ -1,10 +1,11 @@
 package service;
 
-import domain.User;
+import java.util.Collection;
 
 public interface ServiceCRUD<E> {
     void add(String[] strings);
     void remove(String[] strings);
     void update(String[] strings);
-    Iterable<E> findAllUsers();
+    E findOne(String[] strings);
+    Collection<E> findAll();
 }

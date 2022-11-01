@@ -5,39 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/Pereche.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/Prietenie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/parser/EntityParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/parser/Parser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/parser/UserParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/validation/PrietenieValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/validation/UserValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/validation/Validator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptii/DuplicatedElementException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptii/MyException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptii/NotExistentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptii/ParsingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptii/RepositoryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptii/ValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graf/Graf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graf/GrafListeMuchii.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repo/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repo/memory/AbstractInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repo/memory/InMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/ServiceCRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graf/GrafListaAdiacenta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/prietenii/ServicePrietenii.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/user/ServiceUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/UI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/console/UIConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/console/UIUseri.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Pereche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Pereche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Prietenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Prietenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/parser/EntityParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/parser/UserParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/parser/UserParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/validation/PrietenieValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/validation/PrietenieValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/validation/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/validation/UserValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/validation/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/validation/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptii/DuplicatedElementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/DuplicatedElementException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptii/MyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/MyException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptii/NotExistentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/NotExistentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptii/ParsingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/ParsingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptii/RepositoryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/RepositoryException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptii/ValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptii/ValidationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graf/Graf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graf/Graf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graf/GrafListeMuchii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graf/GrafListeMuchii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/memory/AbstractInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/memory/AbstractInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/memory/InMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/memory/InMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ServiceCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +53,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -77,6 +84,60 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="LongestComp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="graf.test.LongestComp" />
+      <module name="L3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="graf.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="L3" />
+      <option name="PROGRAM_PARAMETERS" value="12" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.Test" />
+      <module name="L3" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.LongestComp" />
+      <item itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.LongestComp" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -94,8 +155,25 @@
       <workItem from="1667055011337" duration="942000" />
       <workItem from="1667056338775" duration="1937000" />
       <workItem from="1667120775287" duration="1638000" />
-      <workItem from="1667125551093" duration="7474000" />
+      <workItem from="1667125551093" duration="19057000" />
+      <workItem from="1667145152885" duration="13244000" />
+      <workItem from="1667228602849" duration="16152000" />
+      <workItem from="1667282807036" duration="109000" />
+      <workItem from="1667284828580" duration="1794000" />
+      <workItem from="1667289927450" duration="672000" />
+      <workItem from="1667325841384" duration="77000" />
+      <workItem from="1667325931083" duration="992000" />
+      <workItem from="1667326940812" duration="139000" />
+      <workItem from="1667327091718" duration="2157000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1667133206595</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667133206595</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
