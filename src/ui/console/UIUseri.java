@@ -26,6 +26,11 @@ public class UIUseri {
      * @param args - argumentele comenzii
      */
     public void execute(String[] args) {
+        if(args.length == 1){
+            System.out.println("Invalid command! Try one of the following:");
+            System.out.println("add, remove, update, find, findall");
+            return;
+        }
         switch (args[1]){
             case "add":
                 addUser();
