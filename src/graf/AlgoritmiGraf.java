@@ -124,7 +124,7 @@ public class AlgoritmiGraf {
 
     /**
      * determina componenta care contine cel mai lung drum din graf
-     * algoritm: n BFS-uri
+     * algoritm: n DFS-uri
      * @param graf - graful in care se cauta componenta
      * @return - perechea formata din componenta care contine cel mai lung drum si lungimea acestuia
      * @param <Nod> - tipul nodurilor

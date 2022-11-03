@@ -2,7 +2,7 @@ package ui.console;
 
 import domain.Prietenie;
 import domain.User;
-import exceptii.MyException;
+import graf.StrategiiCelMaiLungDrum;
 import service.Service;
 import utils.Pair;
 import utils.Utils;
@@ -11,9 +11,8 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class UIPrietenii {
-    private static final String COMMAND = "prietenii";
-    private Scanner scanner;
-    private Service service;
+    private final Scanner scanner;
+    private final Service service;
 
     /**
      * Constructor pentru interfata prietenilor, seteaza service-ul si scanner-ul
@@ -48,7 +47,7 @@ public class UIPrietenii {
             case "find":
                 findPrietenie();
                 break;
-            case "findAll":
+            case "findall":
                 findAll();
                 break;
             case "nrcomunitati":
@@ -58,8 +57,8 @@ public class UIPrietenii {
                 ceaMaiSociabilaComunitate();
                 break;
             default:
-                System.out.println("Invalid command! Try one of the following:");
-                System.out.println("add, remove, update, find, findAll, nrcomunitati, cmsc");
+                System.out.println("Invalid subcommand! Try one of the following:");
+                System.out.println("add, remove, update, find, findall, nrcomunitati, cmsc");
         }
     }
 
@@ -68,7 +67,7 @@ public class UIPrietenii {
      */
     private void ceaMaiSociabilaComunitate() {
         Utils.tryExecute(() -> {
-            Pair<Set<User>, Integer> com = service.getServicePrietenii().getCeaMaiSociabilaComunitate();
+            Pair<Set<User>, Integer> com = service.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.Backtracking);
             System.out.println("Cea mai sociabila comunitate are scorul "+com.second+" si este formata din:");
             com.first.forEach(System.out::println);
         });
@@ -78,9 +77,7 @@ public class UIPrietenii {
      * Numarul de comunitati
      */
     private void numarComunitati() {
-        Utils.tryExecute(() -> {
-            System.out.println("Numarul de comunitati este: " + service.getServicePrietenii().getNumarComunitati());
-        });
+        Utils.tryExecute(() -> System.out.println("Numarul de comunitati este: " + service.getServicePrietenii().getNumarComunitati()));
     }
 
     /**

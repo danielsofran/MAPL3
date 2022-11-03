@@ -7,9 +7,8 @@ import utils.Utils;
 import java.util.Scanner;
 
 public class UIUseri {
-    private static final String COMMAND = "prietenii";
-    private Scanner scanner;
-    private Service service;
+    private final Scanner scanner;
+    private final Service service;
 
     /**
      * Constructor pentru interfata user-ilor, seteaza service-ul si scanner-ul
@@ -27,7 +26,7 @@ public class UIUseri {
      */
     public void execute(String[] args) {
         if(args.length == 1){
-            System.out.println("Invalid command! Try one of the following:");
+            System.out.println("Invalid subcommand! Try one of the following:");
             System.out.println("add, remove, update, find, findall");
             return;
         }
@@ -86,9 +85,7 @@ public class UIUseri {
         params[2] = scanner.nextLine();
         System.out.print("Introduceti parola user-ului: ");
         params[3] = scanner.nextLine();
-        Utils.tryExecute(() -> {
-            service.getServiceUser().update(params);
-        });
+        Utils.tryExecute(() -> service.getServiceUser().update(params));
     }
 
     /**
@@ -98,9 +95,7 @@ public class UIUseri {
         String[] params = new String[1];
         System.out.print("Introduceti id-ul user-ului pe care doriti sa il stergeti: ");
         params[0] = scanner.nextLine();
-        Utils.tryExecute(() -> {
-            service.getServiceUser().remove(params);
-        });
+        Utils.tryExecute(() -> service.getServiceUser().remove(params));
     }
 
     /**

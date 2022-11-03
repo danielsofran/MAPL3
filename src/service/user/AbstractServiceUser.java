@@ -44,7 +44,8 @@ public abstract class AbstractServiceUser implements ServiceCRUD<User> {
                 repoPrietenii.delete(prietenie.getId());
         });
         repoUser.delete(id);
-        graf.removeNod(user);
+        try { graf.removeNod(user); }
+        catch (NotExistentException ignored) {}
     }
 
     /**

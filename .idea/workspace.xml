@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="read file">
+    <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="lab3 predat">
+      <change afterPath="$PROJECT_DIR$/src/graf/StrategiiCelMaiLungDrum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/useri" beforeDir="false" afterPath="$PROJECT_DIR$/data/useri" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graf/AlgoritmiGraf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graf/AlgoritmiGraf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/console/UIUseri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/console/UIUseri.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,16 +26,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2GY5Bt3RgE4llR8NHinBmVANtnQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -134,6 +148,8 @@
       <workItem from="1667327091718" duration="8982000" />
       <workItem from="1667412002668" duration="3597000" />
       <workItem from="1667415721771" duration="309000" />
+      <workItem from="1667446482088" duration="2776000" />
+      <workItem from="1667463067063" duration="2606000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1667133206595</created>
@@ -193,7 +209,8 @@
     <MESSAGE value="doc2" />
     <MESSAGE value="doc3" />
     <MESSAGE value="read file" />
-    <option name="LAST_COMMIT_MESSAGE" value="read file" />
+    <MESSAGE value="lab3 predat" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab3 predat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

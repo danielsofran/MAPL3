@@ -14,25 +14,24 @@ import repo.memory.InMemoryRepository;
 import service.prietenii.ServicePrietenii;
 import service.user.ServiceUser;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 public class Service {
-    private final Parser<User> userParser;
-    private final Parser<Prietenie> prietenieParser;
 
-    private ServiceUser userService;
-    private ServicePrietenii prietenieService;
+    private final ServiceUser userService;
+    private final ServicePrietenii prietenieService;
 
     /**
      * Constructorul clasei Service
      * initializeaza parserele, validatoarele, repository-urile, graful si serviciile
      */
     public Service(){
-        userParser = new UserParser();
-        prietenieParser = new PrietenieParser();
+        Parser<User> userParser = new UserParser();
+        Parser<Prietenie> prietenieParser = new PrietenieParser();
         Validator<User> validatorUser = new UserValidator();
         Validator<Prietenie> validatorPrietenie = new PrietenieValidator();
         Repository<Long, User> repoUser = new InMemoryRepository<>(validatorUser);
@@ -57,22 +56,35 @@ public class Service {
         return prietenieService;
     }
 
+    /**
+     * incarca datele din fisiere
+     * @param srv - service-ul in care se vor incarca datele
+     * @param fileName - numele fisierului
+     * @param <E> - tipul entitatilor
+     * @throws RuntimeException - exceptie de la citirea din fisier
+     */
     private<E> void LoadFromFile(ServiceCRUD<E> srv,String fileName)
     {
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            String linie;
-            while((linie=br.readLine())!=null){
-                String[] attr = linie.split(";");
-                srv.add(attr);
-            }
+        Path path = Paths.get(fileName);
+
+        try(Stream<String> lines = Files.lines(path)){
+            lines.forEach(line -> {
+                String[] tokens = line.split(";");
+                srv.add(tokens);
+            });
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
+    /**
+     * incarca datele din fisiere
+     */
     private void LoadFromFiles()
     {
-        LoadFromFile(userService,"C:\\Users\\Demian\\Desktop\\L3\\data\\useri");
-        LoadFromFile(prietenieService,"C:\\Users\\Demian\\Desktop\\L3\\data\\prietenii");
+        String data = Paths.get("./data").normalize().toAbsolutePath() + "\\";
+        LoadFromFile(userService,data + "useri");
+        LoadFromFile(prietenieService,data + "prietenii");
     }
 }

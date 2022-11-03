@@ -7,6 +7,7 @@ import exceptii.DuplicatedElementException;
 import exceptii.NotExistentException;
 import graf.AlgoritmiGraf;
 import graf.GrafListaAdiacenta;
+import graf.StrategiiCelMaiLungDrum;
 import repo.Repository;
 import service.ServiceCRUD;
 import utils.Pair;
@@ -68,7 +69,8 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
         if (!exists.get())
             throw new NotExistentException("Prietenia nu exista!");
         repoPrietenii.delete(id);
-        graf.removeMuchie(prietenie);
+        try { graf.removeMuchie(prietenie); }
+        catch (NotExistentException ignored) {}
     }
 
     /**
@@ -127,10 +129,13 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
 
     /**
      * determina cea mai sociabila comunitate
+     * @param strategie - algoritmul pe grafuri folosit pentru determinarea componentei cu cel mai lung drum
      * @return - pereche formata din multimea de useri din comunitate si scorul comunitatii (cel mai lung drum din graf)
      */
-    public Pair<Set<User>, Integer> getCeaMaiSociabilaComunitate(){
-        Pair<GrafListaAdiacenta<User, Prietenie>, Integer> comunitate = AlgoritmiGraf.componentWithLongestPath(graf);
+    public Pair<Set<User>, Integer> getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum strategie){
+        Pair<GrafListaAdiacenta<User, Prietenie>, Integer> comunitate;
+        if(strategie == StrategiiCelMaiLungDrum.Backtracking) comunitate = AlgoritmiGraf.componentWithLongestPath(graf);
+        else comunitate = AlgoritmiGraf.componentWithLongestPath2(graf);
         return new Pair<>(comunitate.first.getNoduri(), comunitate.second);
     }
 }
