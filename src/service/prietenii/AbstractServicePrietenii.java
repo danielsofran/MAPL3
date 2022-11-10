@@ -19,7 +19,6 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
     protected Repository<Long, User> repoUser;
     protected Repository<Long, Prietenie> repoPrietenii;
     protected Parser<Prietenie> parserPrietenie;
-    protected GrafListaAdiacenta<User, Prietenie> graf;
 
     /**
      * determina id-urile unei prietenii: id-ul prieteniei, id-ul primului user si id-ul celui de-al doilea user
@@ -49,7 +48,6 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
                 throw new DuplicatedElementException("Prietenia exista deja!");
         });
         repoPrietenii.save(prietenie);
-        graf.addMuchie(prietenie);
     }
 
     /**
@@ -69,8 +67,6 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
         if (!exists.get())
             throw new NotExistentException("Prietenia nu exista!");
         repoPrietenii.delete(id);
-        try { graf.removeMuchie(prietenie); }
-        catch (NotExistentException ignored) {}
     }
 
     /**
@@ -91,7 +87,6 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
             throw new NotExistentException("Prietenia nu exista!");
         Prietenie newPrietenie = fromIds(Arrays.copyOfRange(strings, 1, strings.length));
         repoPrietenii.update(id, newPrietenie);
-        graf.updateMuchie(oldPrietenie, newPrietenie);
     }
 
     /**
@@ -119,11 +114,22 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
     }
 
     /**
+     * determina graful de prietenii
+     * @return - graful de prietenii, representat prin lista de adiacenta
+     */
+    private GrafListaAdiacenta<User, Prietenie> getGraf() {
+        GrafListaAdiacenta<User, Prietenie> graf = new GrafListaAdiacenta<User, Prietenie>();
+        repoUser.findAll().forEach(graf::addNod);
+        List<Prietenie> prietenii = new ArrayList<>(repoPrietenii.findAll());
+        prietenii.forEach(graf::addMuchie);
+        return graf;
+    }
+    /**
      * determina numarul de comunitati
      * @return - numarul de comunitati
      */
     public Integer getNumarComunitati(){
-        List<GrafListaAdiacenta<User, Prietenie>> comunitati = graf.componenteConexe();
+        List<GrafListaAdiacenta<User, Prietenie>> comunitati = getGraf().componenteConexe();
         return comunitati.size();
     }
 
@@ -134,6 +140,7 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
      */
     public Pair<Set<User>, Integer> getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum strategie){
         Pair<GrafListaAdiacenta<User, Prietenie>, Integer> comunitate;
+        GrafListaAdiacenta<User, Prietenie> graf = getGraf();
         if(strategie == StrategiiCelMaiLungDrum.Backtracking) comunitate = AlgoritmiGraf.componentWithLongestPath(graf);
         else comunitate = AlgoritmiGraf.componentWithLongestPath2(graf);
         return new Pair<>(comunitate.first.getNoduri(), comunitate.second);

@@ -1,0 +1,15 @@
+unnamed package
+domain
+domain.parser
+domain.validation
+exceptii
+graf
+repo
+repo.memory
+service
+service.prietenii
+service.user
+test
+ui
+ui.console
+utils

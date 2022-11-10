@@ -189,7 +189,7 @@ public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Gra
         graf.addNod(source);
         while (!queue.isEmpty()){
             Nod t = queue.poll();
-            if(!visited.get(t)){
+            if(t != null && !visited.get(t)){
                 visited.put(t, true);
                 for(Muchie m : getMuchiiAdiacente(t)){
                     Nod nod = m.getFirst().equals(t) ? m.getSecond() : m.getFirst();

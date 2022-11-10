@@ -5,17 +5,146 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="lab3 predat">
-      <change afterPath="$PROJECT_DIR$/src/graf/StrategiiCelMaiLungDrum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_2_2022_9_28_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_2_2022_9_28_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/allclasses-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/allclasses.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/allpackages-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/Entity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/Prietenie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/User.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/parser/Parser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/parser/PrietenieParser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/parser/UserParser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/parser/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/parser/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/validation/PrietenieValidator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/validation/UserValidator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/validation/Validator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/validation/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/domain/validation/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/element-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/exceptii/DuplicatedElementException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/exceptii/MyException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/exceptii/NotExistentException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/exceptii/ParsingException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/exceptii/RepositoryException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/exceptii/ValidationException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/exceptii/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/exceptii/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/graf/AlgoritmiGraf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/graf/Graf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/graf/GrafListaAdiacenta.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/graf/StrategiiCelMaiLungDrum.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/graf/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/graf/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/external/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_65_dadada_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_75_dadada_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_222222_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_454545_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_888888_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-3.5.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.structure.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.structure.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils-ie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip/dist/jszip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip/dist/jszip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/member-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/member-search-index.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-search-index.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/repo/Repository.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/repo/memory/AbstractInMemoryRepository.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/repo/memory/InMemoryRepository.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/repo/memory/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/repo/memory/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/repo/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/repo/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/resources/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/resources/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/Service.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/ServiceCRUD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/prietenii/AbstractServicePrietenii.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/prietenii/ServicePrietenii.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/prietenii/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/prietenii/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/user/AbstractServiceUser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/user/ServiceUser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/user/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/service/user/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/test/Test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/test/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/test/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/type-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/type-search-index.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/ui/UI.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/ui/console/UIConsole.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/ui/console/UIPrietenii.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/ui/console/UIUseri.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/ui/console/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/ui/console/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/ui/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/ui/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/utils/Pair.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/utils/Pereche.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/utils/Utils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/utils/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/utils/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/useri" beforeDir="false" afterPath="$PROJECT_DIR$/data/useri" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graf/AlgoritmiGraf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graf/AlgoritmiGraf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graf/GrafListaAdiacenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graf/GrafListaAdiacenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/prietenii/ServicePrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/prietenii/ServicePrietenii.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/user/ServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user/ServiceUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/console/UIUseri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/console/UIUseri.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +176,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Demian/Desktop/L3/data&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/daniel/Desktop/MAP/Seminar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Demian\Desktop\L3\data" />
@@ -70,7 +200,7 @@
       <recent name="service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="LongestComp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="graf.test.LongestComp" />
       <module name="L3" />
@@ -113,8 +243,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.LongestComp" />
       </list>
     </recent_temporary>
@@ -149,7 +279,10 @@
       <workItem from="1667412002668" duration="3597000" />
       <workItem from="1667415721771" duration="309000" />
       <workItem from="1667446482088" duration="2776000" />
-      <workItem from="1667463067063" duration="2606000" />
+      <workItem from="1667463067063" duration="2819000" />
+      <workItem from="1667494584389" duration="385000" />
+      <workItem from="1667888111231" duration="51000" />
+      <workItem from="1668073198505" duration="1841000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1667133206595</created>
@@ -186,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667415820032</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="lab3 predat">
+      <created>1667465801929</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667465801929</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,9 +335,38 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="192a0319-906b-4dab-bbbe-8fb65a919491">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -219,7 +388,17 @@
           <properties class="exceptii.ParsingException" package="exceptii" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/Test.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="service" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"domain"},{"l":"domain.parser"},{"l":"domain.validation"},{"l":"exceptii"},{"l":"graf"},{"l":"repo"},{"l":"repo.memory"},{"l":"service"},{"l":"service.prietenii"},{"l":"service.user"},{"l":"test"},{"l":"ui"},{"l":"ui.console"},{"l":"utils"}]

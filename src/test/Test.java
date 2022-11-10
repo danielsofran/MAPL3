@@ -2,9 +2,7 @@ package test;
 
 import domain.Entity;
 import domain.Prietenie;
-import exceptii.DuplicatedElementException;
-import exceptii.NotExistentException;
-import exceptii.ValidationException;
+import exceptii.*;
 import graf.StrategiiCelMaiLungDrum;
 import service.Service;
 
@@ -50,7 +48,7 @@ public class Test {
         try{service.getServiceUser().add(user4);}
         catch (DuplicatedElementException ignored){}
         try{service.getServiceUser().add(user5);}
-        catch(ValidationException ignored){}
+        catch(ParsingException ignored){}
 
         service.getServicePrietenii().add(pr1);
         service.getServicePrietenii().add(pr2);
@@ -68,7 +66,7 @@ public class Test {
         List<Prietenie>prietenii = new LinkedList<>(service.getServicePrietenii().findAll());
         assert prietenii.size() == 0;
         
-        assert service.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.N_DFSuri).second == 0;
+        assert service.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.Backtracking).second == 0;
 
         service.getServiceUser().remove(user2);
         service.getServiceUser().remove(user3);

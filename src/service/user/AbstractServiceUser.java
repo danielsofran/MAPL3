@@ -14,7 +14,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class AbstractServiceUser implements ServiceCRUD<User> {
-    protected GrafListaAdiacenta<User, Prietenie> graf;
     protected Repository<Long, User> repoUser;
     protected Repository<Long, Prietenie> repoPrietenii;
     protected Parser<User> userParser;
@@ -27,7 +26,6 @@ public abstract class AbstractServiceUser implements ServiceCRUD<User> {
     public void add(String[] strings) {
         User user = userParser.parse(strings);
         repoUser.save(user);
-        graf.addNod(user);
     }
 
     /**
@@ -44,8 +42,6 @@ public abstract class AbstractServiceUser implements ServiceCRUD<User> {
                 repoPrietenii.delete(prietenie.getId());
         });
         repoUser.delete(id);
-        try { graf.removeNod(user); }
-        catch (NotExistentException ignored) {}
     }
 
     /**
@@ -58,7 +54,6 @@ public abstract class AbstractServiceUser implements ServiceCRUD<User> {
         User oldUser = repoUser.findOne(id);
         User newUser = userParser.parse(Arrays.copyOfRange(strings, 1, strings.length));
         repoUser.update(id, newUser);
-        graf.updateNod(oldUser, newUser);
     }
 
     /**
