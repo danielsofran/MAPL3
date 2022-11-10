@@ -38,7 +38,6 @@ public class Service {
         Repository<Long, Prietenie> repoPrietenii = new InMemoryRepository<>(validatorPrietenie);
         userService = new ServiceUser(repoUser, repoPrietenii, userParser);
         prietenieService = new ServicePrietenii(repoPrietenii, repoUser, prietenieParser);
-        LoadFromFiles();
     }
 
     /**

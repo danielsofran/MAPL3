@@ -1,17 +1,23 @@
 package domain.validation;
 
 import domain.Prietenie;
+import domain.User;
 import exceptii.ValidationException;
 
 public class PrietenieValidator implements Validator<Prietenie> {
-    private final UserValidator userValidator;
 
-    public PrietenieValidator() {
-        this.userValidator = new UserValidator();
-    }
-
-    public PrietenieValidator(UserValidator userValidator) {
-        this.userValidator = userValidator;
+    /**
+     * Valideaza id-ul unui un user
+     * @param id - id-ul de validat
+     * @throws ValidationException - daca user-ul nu este valid
+     */
+    private void validateId(Long id) throws ValidationException {
+        if (id == null) {
+            throw new ValidationException("Id-ul nu poate fi null!");
+        }
+        if(id.compareTo(0L) < 0) {
+            throw new ValidationException("Id-ul nu poate fi negativ!");
+        }
     }
 
     /**
@@ -27,7 +33,7 @@ public class PrietenieValidator implements Validator<Prietenie> {
             throw new ValidationException("Prietenia trebuie sa aiba cel putin un user!");
         if (entity.getFirst().equals(entity.getSecond()))
             throw new ValidationException("Un user nu poate fi prieten cu el insusi!");
-        userValidator.validate(entity.getFirst());
-        userValidator.validate(entity.getSecond());
+        validateId(entity.getFirst());
+        validateId(entity.getSecond());
     }
 }

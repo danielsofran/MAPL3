@@ -19,18 +19,6 @@ public class Test {
     public static void main(String[] args) {
         Service service = new Service();
         // delete all users and prietenii
-        List<Long> idUsers = service.getServiceUser().findAll().stream().map(Entity::getId).collect(Collectors.toCollection(LinkedList::new));
-        List<Long> idPrietenii = service.getServicePrietenii().findAll().stream().map(Entity::getId).collect(Collectors.toCollection(LinkedList::new));
-        Consumer<Long> delete = id -> {
-            try {
-                String[] idString = {id.toString()};
-                service.getServiceUser().remove(idString);
-            } catch (NotExistentException e) {
-                e.printStackTrace();
-            }
-        };
-        idUsers.forEach(delete);
-        idPrietenii.forEach(delete);
         String[] user1 = {"1", "Numehthg", "Email1", "Pasw1"};
         String[] user2 = {"2", "Nume ejfbeh jkdfb", "Email2", "Pasw2"};
         String[] user3 = {"3", "Nume ejfbeh jkdfb", "Email2", "Pasw2"};

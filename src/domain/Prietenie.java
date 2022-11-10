@@ -4,9 +4,9 @@ import utils.Pereche;
 
 import java.util.Objects;
 
-public class Prietenie extends Entity<Long> implements Pereche<User, User> {
-    private User user1 = null;
-    private User user2 = null;
+public class Prietenie extends Entity<Long> implements Pereche<Long, Long> {
+    private Long id_user1;
+    private Long id_user2;
 
     /**
      * Constructorul implicit
@@ -20,8 +20,8 @@ public class Prietenie extends Entity<Long> implements Pereche<User, User> {
      */
     public Prietenie(User user1, User user2){
         super();
-        this.user1 = user1;
-        this.user2 = user2;
+        id_user1 = user1.getId();
+        id_user2 = user2.getId();
     }
 
     /**
@@ -32,44 +32,56 @@ public class Prietenie extends Entity<Long> implements Pereche<User, User> {
      */
     public Prietenie(Long id, User user1, User user2){
         super(id);
-        this.user1 = user1;
-        this.user2 = user2;
+        id_user1 = user1.getId();
+        id_user2 = user2.getId();
+    }
+
+    /**
+     * Constructor cu parametri
+     * @param id - id-ul prieteniei
+     * @param id1 - id-ul primului user
+     * @param id2 - id-ul celui de-al doilea user
+     */
+    public Prietenie(Long id, Long id1, Long id2) {
+        super(id);
+        id_user1 = id1;
+        id_user2 = id2;
     }
 
     /**
      * getter pentru primul user
-     * @return primul user
+     * @return id-ul primului user
      */
     @Override
-    public User getFirst() {
-        return user1;
+    public Long getFirst() {
+        return id_user1;
     }
 
     /**
      * getter pentru al doilea user
-     * @return al doilea user
+     * @return id-ul celui de-al doilea user
      */
     @Override
-    public User getSecond() {
-        return user2;
+    public Long getSecond() {
+        return id_user2;
     }
 
     /**
      * setter pentru primul user
-     * @param user1 - primul user
+     * @param user1 - id-ul primului user
      */
     @Override
-    public void setFirst(User user1) {
-        this.user1 = user1;
+    public void setFirst(Long user1) {
+        this.id_user1 = user1;
     }
 
     /**
      * setter pentru al doilea user
-     * @param user2 - al doilea user
+     * @param user2 - id-ul celui de-al doilea user
      */
     @Override
-    public void setSecond(User user2) {
-        this.user2 = user2;
+    public void setSecond(Long user2) {
+        this.id_user2 = user2;
     }
 
     /**
@@ -83,8 +95,7 @@ public class Prietenie extends Entity<Long> implements Pereche<User, User> {
         if (o == null || getClass() != o.getClass()) return false;
         Prietenie prietenie = (Prietenie) o;
         return getId().equals(prietenie.getId()) ||
-                user1.equals(prietenie.user1) && user2.equals(prietenie.user2) ||
-                user1.equals(prietenie.user2) && user2.equals(prietenie.user1);
+                id_user1.equals(prietenie.id_user1) && id_user2.equals(prietenie.id_user2);
     }
 
     /**
@@ -93,7 +104,7 @@ public class Prietenie extends Entity<Long> implements Pereche<User, User> {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), user1, user2);
+        return Objects.hash(getId(), id_user1, id_user2);
     }
 
     /**
@@ -102,6 +113,6 @@ public class Prietenie extends Entity<Long> implements Pereche<User, User> {
      */
     @Override
     public String toString() {
-        return user1 + " este prieten cu " + user2;
+        return "User-ul cu id-ul " + id_user1 + " este prieten cu userul cu id-ul " + id_user2;
     }
 }

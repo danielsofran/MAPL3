@@ -14,25 +14,13 @@ import utils.Pair;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
 
 public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie> {
     protected Repository<Long, User> repoUser;
     protected Repository<Long, Prietenie> repoPrietenii;
     protected Parser<Prietenie> parserPrietenie;
-
-    /**
-     * determina id-urile unei prietenii: id-ul prieteniei, id-ul primului user si id-ul celui de-al doilea user
-     * @param strings - string-urile de parsat
-     * @return - prietenia cu id-urile determinate
-     */
-    private Prietenie fromIds(String[] strings){
-        Long id = parserPrietenie.parseId(strings[0]);
-        Long id1 = parserPrietenie.parseId(strings[1]);
-        Long id2 = parserPrietenie.parseId(strings[2]);
-        User user1 = repoUser.findOne(id1);
-        User user2 = repoUser.findOne(id2);
-        return new Prietenie(id, user1, user2);
-    }
+    protected Long idGenerator;
 
     /**
      * adauga o prietenie in repository si in graf
@@ -40,7 +28,11 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
      */
     @Override
     public void add(String[] strings) {
-        Prietenie prietenie = fromIds(strings);
+        String sid = idGenerator.toString();
+        String[] newstrings = new String[strings.length + 1];
+        newstrings[0] = sid;
+        System.arraycopy(strings, 0, newstrings, 1, strings.length);
+        Prietenie prietenie = parserPrietenie.parse(newstrings);
         // find the users
         List<Prietenie> prietenii = new ArrayList<>(repoPrietenii.findAll());
         prietenii.forEach(prietenie1 -> {
@@ -48,6 +40,7 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
                 throw new DuplicatedElementException("Prietenia exista deja!");
         });
         repoPrietenii.save(prietenie);
+        idGenerator++;
     }
 
     /**
@@ -85,23 +78,39 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
         });
         if (!exists.get())
             throw new NotExistentException("Prietenia nu exista!");
-        Prietenie newPrietenie = fromIds(Arrays.copyOfRange(strings, 1, strings.length));
+        Prietenie newPrietenie = parserPrietenie.parse(strings);
         repoPrietenii.update(id, newPrietenie);
     }
 
     /**
      * determina o prietenie din repository
-     * @param strings - string-ul id-ului prieteniei
+     * @param strings - string-ul id-ului prieteniei, sau al celor 2 useri
      * @return - prietenia determinata
      * @throws NotExistentException - daca prietenia nu exista
      */
     @Override
     public Prietenie findOne(String[] strings) {
-        Long id = parserPrietenie.parseId(strings[0]);
-        Prietenie prietenie = repoPrietenii.findOne(id);
-        if(prietenie == null)
-            throw new NotExistentException("Prietenia nu exista!");
-        return prietenie;
+        switch (strings.length) {
+            case 1:
+                Long id = parserPrietenie.parseId(strings[0]);
+                Prietenie pr = repoPrietenii.findOne(id);
+                if (pr == null)
+                    throw new NotExistentException("Prietenia nu exista!");
+                return pr;
+            case 2:
+                Long id1 = parserPrietenie.parseId(strings[0]);
+                Long id2 = parserPrietenie.parseId(strings[1]);
+                Prietenie prietenie0 = new Prietenie(-1L, id1, id2);
+                repoPrietenii.findAll().forEach(prietenie -> {
+                    if (prietenie.equals(prietenie0))
+                        prietenie0.setId(prietenie.getId());
+                });
+                if (prietenie0.getId() == -1L)
+                    throw new NotExistentException("Prietenia nu exista!");
+                return prietenie0;
+            default:
+                throw new IllegalArgumentException("Numar de argumente invalid!");
+        }
     }
 
     /**
@@ -117,9 +126,9 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
      * determina graful de prietenii
      * @return - graful de prietenii, representat prin lista de adiacenta
      */
-    private GrafListaAdiacenta<User, Prietenie> getGraf() {
-        GrafListaAdiacenta<User, Prietenie> graf = new GrafListaAdiacenta<>();
-        repoUser.findAll().forEach(graf::addNod);
+    private GrafListaAdiacenta<Long, Prietenie> getGraf() {
+        GrafListaAdiacenta<Long, Prietenie> graf = new GrafListaAdiacenta<>();
+        repoUser.findAll().stream().map(User::getId).forEach(graf::addNod);
         List<Prietenie> prietenii = new ArrayList<>(repoPrietenii.findAll());
         prietenii.forEach(graf::addMuchie);
         return graf;
@@ -129,7 +138,7 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
      * @return - numarul de comunitati
      */
     public Integer getNumarComunitati(){
-        List<GrafListaAdiacenta<User, Prietenie>> comunitati = getGraf().componenteConexe();
+        List<GrafListaAdiacenta<Long, Prietenie>> comunitati = getGraf().componenteConexe();
         return comunitati.size();
     }
 
@@ -139,10 +148,11 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
      * @return - pereche formata din multimea de useri din comunitate si scorul comunitatii (cel mai lung drum din graf)
      */
     public Pair<Set<User>, Integer> getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum strategie){
-        Pair<GrafListaAdiacenta<User, Prietenie>, Integer> comunitate;
-        GrafListaAdiacenta<User, Prietenie> graf = getGraf();
+        Pair<GrafListaAdiacenta<Long, Prietenie>, Integer> comunitate;
+        GrafListaAdiacenta<Long, Prietenie> graf = getGraf();
         if(strategie == StrategiiCelMaiLungDrum.Backtracking) comunitate = AlgoritmiGraf.componentWithLongestPath(graf);
         else comunitate = AlgoritmiGraf.componentWithLongestPath2(graf);
-        return new Pair<>(comunitate.getFirst().getNoduri(), comunitate.getSecond());
+        Set<User> users = comunitate.getFirst().getNoduri().stream().map(repoUser::findOne).collect(Collectors.toSet());
+        return new Pair<>(users, comunitate.getSecond());
     }
 }

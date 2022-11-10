@@ -19,5 +19,7 @@ public class ServiceUser extends AbstractServiceUser {
         this.repoUser = repoUser;
         this.repoPrietenii = repoPrietenii;
         this.userParser = userParser;
+        if(repoUser.findAll().size() != 0) idGenerator = repoUser.findAll().stream().mapToLong(User::getId).max().getAsLong() + 1;
+        else idGenerator = 1L;
     }
 }

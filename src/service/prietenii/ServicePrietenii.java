@@ -21,5 +21,7 @@ public class ServicePrietenii extends AbstractServicePrietenii {
         this.repoPrietenii = repoPrietenii;
         this.repoUser = repoUser;
         this.parserPrietenie = prietenieParser;
+        if(repoPrietenii.findAll().size() != 0) idGenerator = repoPrietenii.findAll().stream().mapToLong(Prietenie::getId).max().getAsLong() + 1;
+        else idGenerator = 1L;
     }
 }
