@@ -16,7 +16,7 @@ public class AlgoritmiGraf {
      * @param <Nod> - tipul nodurilor
      * @param <Muchie> - tipul muchiilor
      */
-    protected static <Nod, Muchie extends Pereche<Nod>> void BFS(GrafListaAdiacenta<Nod, Muchie> graf, Nod source, Map<Nod, Boolean> visited, Map<Nod, Nod> parent, Map<Nod, Integer> distance){
+    protected static <Nod, Muchie extends Pereche<Nod, Nod>> void BFS(GrafListaAdiacenta<Nod, Muchie> graf, Nod source, Map<Nod, Boolean> visited, Map<Nod, Nod> parent, Map<Nod, Integer> distance){
         Queue<Nod> Q = new LinkedList<>();
         Q.add(source);
         visited.put(source, true);
@@ -45,7 +45,7 @@ public class AlgoritmiGraf {
      * @param <Nod> - tipul nodurilor
      * @param <Muchie> - tipul muchiilor
      */
-    protected static <Nod, Muchie extends Pereche<Nod>> void DFS(GrafListaAdiacenta<Nod, Muchie> graf, Nod source, Map<Nod, Boolean> visited, Map<Nod, Nod> parent, Map<Nod, Integer> distance){
+    protected static <Nod, Muchie extends Pereche<Nod, Nod>> void DFS(GrafListaAdiacenta<Nod, Muchie> graf, Nod source, Map<Nod, Boolean> visited, Map<Nod, Nod> parent, Map<Nod, Integer> distance){
         Stack<Nod> S = new Stack<>();
         S.push(source);
         visited.put(source, true);
@@ -75,7 +75,7 @@ public class AlgoritmiGraf {
      * @param <Nod> - tipul nodurilor
      * @param <Muchie> - tipul muchiilor
      */
-    public static <Nod, Muchie extends Pereche<Nod>> void BackDrum(GrafListaAdiacenta<Nod, Muchie> graf, Nod source, Map<Nod, Boolean> visited, Map<Nod, Integer> distance){
+    public static <Nod, Muchie extends Pereche<Nod, Nod>> void BackDrum(GrafListaAdiacenta<Nod, Muchie> graf, Nod source, Map<Nod, Boolean> visited, Map<Nod, Integer> distance){
         for(Nod nod : graf.getVecini(source)){
             if(!visited.get(nod)){
                 visited.put(nod, true);
@@ -97,7 +97,7 @@ public class AlgoritmiGraf {
      * @param <Nod> - tipul nodurilor
      * @param <Muchie> - tipul muchiilor
      */
-    public static <Nod, Muchie extends Pereche<Nod>> Pair<GrafListaAdiacenta<Nod, Muchie>, Integer> componentWithLongestPath(GrafListaAdiacenta<Nod, Muchie> graf){
+    public static <Nod, Muchie extends Pereche<Nod, Nod>> Pair<GrafListaAdiacenta<Nod, Muchie>, Integer> componentWithLongestPath(GrafListaAdiacenta<Nod, Muchie> graf){
         int dmaxall = -1;
         GrafListaAdiacenta<Nod, Muchie> compmax = new GrafListaAdiacenta<>();
         for(GrafListaAdiacenta<Nod, Muchie> comp : graf.componenteConexe()){
@@ -130,7 +130,7 @@ public class AlgoritmiGraf {
      * @param <Nod> - tipul nodurilor
      * @param <Muchie> - tipul muchiilor
      */
-    public static <Nod, Muchie extends Pereche<Nod>> Pair<GrafListaAdiacenta<Nod, Muchie>, Integer> componentWithLongestPath2(GrafListaAdiacenta<Nod, Muchie> graf){
+    public static <Nod, Muchie extends Pereche<Nod, Nod>> Pair<GrafListaAdiacenta<Nod, Muchie>, Integer> componentWithLongestPath2(GrafListaAdiacenta<Nod, Muchie> graf){
         int dmax = -1;
         Nod source = null;
         Map<Nod, Nod> parent = new HashMap<>();

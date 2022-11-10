@@ -4,7 +4,7 @@ import utils.Pereche;
 
 import java.util.Objects;
 
-public class Prietenie extends Entity<Long> implements Pereche<User> {
+public class Prietenie extends Entity<Long> implements Pereche<User, User> {
     private User user1 = null;
     private User user2 = null;
 

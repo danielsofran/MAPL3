@@ -1,8 +1,8 @@
 package utils;
 
-public class Pair<TF, TS>{
-    public TF first;
-    public TS second;
+public class Pair<TF, TS> implements Pereche<TF, TS>{
+    private TF first;
+    private TS second;
 
     /**
      * Constructorul cu parametri
@@ -11,6 +11,26 @@ public class Pair<TF, TS>{
      */
     public Pair(TF first, TS second){
         this.first = first;
+        this.second = second;
+    }
+
+    @Override
+    public TF getFirst() {
+        return first;
+    }
+
+    @Override
+    public TS getSecond() {
+        return second;
+    }
+
+    @Override
+    public void setFirst(TF first) {
+        this.first = first;
+    }
+
+    @Override
+    public void setSecond(TS second) {
         this.second = second;
     }
 }

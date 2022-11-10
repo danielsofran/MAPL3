@@ -68,8 +68,8 @@ public class UIPrietenii {
     private void ceaMaiSociabilaComunitate() {
         Utils.tryExecute(() -> {
             Pair<Set<User>, Integer> com = service.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.Backtracking);
-            System.out.println("Cea mai sociabila comunitate are scorul "+com.second+" si este formata din:");
-            com.first.forEach(System.out::println);
+            System.out.println("Cea mai sociabila comunitate are scorul "+com.getSecond()+" si este formata din:");
+            com.getFirst().forEach(System.out::println);
         });
     }
 

@@ -66,7 +66,7 @@ public class Test {
         List<Prietenie>prietenii = new LinkedList<>(service.getServicePrietenii().findAll());
         assert prietenii.size() == 0;
         
-        assert service.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.Backtracking).second == 0;
+        assert service.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.Backtracking).getSecond() == 0;
 
         service.getServiceUser().remove(user2);
         service.getServiceUser().remove(user3);

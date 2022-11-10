@@ -118,7 +118,7 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
      * @return - graful de prietenii, representat prin lista de adiacenta
      */
     private GrafListaAdiacenta<User, Prietenie> getGraf() {
-        GrafListaAdiacenta<User, Prietenie> graf = new GrafListaAdiacenta<User, Prietenie>();
+        GrafListaAdiacenta<User, Prietenie> graf = new GrafListaAdiacenta<>();
         repoUser.findAll().forEach(graf::addNod);
         List<Prietenie> prietenii = new ArrayList<>(repoPrietenii.findAll());
         prietenii.forEach(graf::addMuchie);
@@ -143,6 +143,6 @@ public abstract class AbstractServicePrietenii implements ServiceCRUD<Prietenie>
         GrafListaAdiacenta<User, Prietenie> graf = getGraf();
         if(strategie == StrategiiCelMaiLungDrum.Backtracking) comunitate = AlgoritmiGraf.componentWithLongestPath(graf);
         else comunitate = AlgoritmiGraf.componentWithLongestPath2(graf);
-        return new Pair<>(comunitate.first.getNoduri(), comunitate.second);
+        return new Pair<>(comunitate.getFirst().getNoduri(), comunitate.getSecond());
     }
 }

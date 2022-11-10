@@ -6,9 +6,9 @@ import exceptii.NotExistentException;
 
 import java.util.*;
 
-public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod>> implements Graf<Nod, Muchie>{
-    private Map<Nod, Set<Muchie>> G;
-    private Map<Nod, Boolean> deleted;
+public class GrafListaAdiacenta<Nod, Muchie extends Pereche<Nod, Nod>> implements Graf<Nod, Muchie>{
+    private final Map<Nod, Set<Muchie>> G;
+    private final Map<Nod, Boolean> deleted;
 
     /**
      * Constructorul clasei

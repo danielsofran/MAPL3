@@ -6,7 +6,7 @@ import exceptii.NotExistentException;
 
 import java.util.Collection;
 
-public interface Graf<Nod, Muchie extends Pereche<Nod>> {
+public interface Graf<Nod, Muchie extends Pereche<Nod, Nod>> {
     /**
      * Adauga un nod in graf
      * @param nod - nodul de adaugat
