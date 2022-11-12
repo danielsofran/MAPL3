@@ -3,6 +3,7 @@ package repo;
 import domain.Entity;
 import domain.validation.Validator;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -37,7 +38,7 @@ public class FileRepository<ID, E extends Entity<ID>> extends InMemoryRepository
                 entity = (E) in.readObject();
             }
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 

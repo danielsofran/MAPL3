@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="lab3 predat">
-      <change afterPath="$PROJECT_DIR$/data/prietenii" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/useri" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repo/FileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_2_2022_9_28_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_2_2022_9_28_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CopyFromTxtToSer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/prietenii" beforeDir="false" afterPath="$PROJECT_DIR$/data/prietenii.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/useri" beforeDir="false" afterPath="$PROJECT_DIR$/data/useri.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/useri.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/useri.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/UserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/UserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/InMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/InMemoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repo/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ServicePrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServicePrietenii.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/console/UIUseri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/console/UIUseri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/FileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/FileRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +75,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="CopyFromTxtToSer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CopyFromTxtToSer" />
+      <module name="L3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="L3" />
@@ -105,12 +105,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.CopyFromTxtToSer" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.CopyFromTxtToSer" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
