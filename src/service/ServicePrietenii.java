@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 public class ServicePrietenii {
     protected Repository<Long, User> repoUser;
     protected Repository<Long, Prietenie> repoPrietenii;
-    protected Parser<Long> idParser;
     protected Long idGenerator;
 
     /**
@@ -26,12 +25,10 @@ public class ServicePrietenii {
      * initializeaza repository-urile, parserele si graful
      * @param repoPrietenii - repository-ul de prietenii
      * @param repoUser - repository-ul de useri
-     * @param idParser - parser-ul de id-uri
      */
     public ServicePrietenii(Repository<Long, Prietenie> repoPrietenii, Repository<Long, User> repoUser, Parser<Long> idParser) {
         this.repoPrietenii = repoPrietenii;
         this.repoUser = repoUser;
-        this.idParser = idParser;
         idGenerator = 1L;
         repoPrietenii.findAll().stream().mapToLong(Prietenie::getId).max().ifPresent(id -> idGenerator = id + 1);
     }
@@ -66,7 +63,9 @@ public class ServicePrietenii {
      */
     public void remove(Long id1, Long id2) {
         if(Objects.equals(id1, id2)) throw new ServiceException("Nu poti sterge o prietenie cu tine insuti!");
-        repoPrietenii.delete(prietenie -> prietenie.contains(id1, id2));
+        Prietenie stearsa = repoPrietenii.delete(prietenie -> prietenie.contains(id1, id2));
+        if (stearsa == null)
+            throw new NotExistentException("Prietenia nu exista!");
     }
 
     /**

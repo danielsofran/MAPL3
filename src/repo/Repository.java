@@ -79,4 +79,9 @@ public interface Repository <ID, E extends Entity<ID>> {
      * @throws IllegalArgumentException - daca predicatul sau entitatea sunt null
      */
     E update(Predicate<E> predicate, E entity) throws IllegalArgumentException;
+
+    /**
+     * sterge toate entitatile
+     */
+    void clear();
 }

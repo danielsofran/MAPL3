@@ -157,4 +157,12 @@ public class InMemoryRepository <ID, E extends Entity<ID>> implements Repository
             entities.put(old.getId(), entity);
         return old;
     }
+
+    /**
+     * sterge toate entitatile
+     */
+    @Override
+    public void clear() {
+        entities.clear();
+    }
 }

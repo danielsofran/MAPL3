@@ -73,6 +73,10 @@ public class UIUseri extends AbstractUI {
      * Afiseaza toti userii
      */
     private void findAll() {
+        if(controller.getServiceUser().findAll().isEmpty()){
+            System.err.println("Nu exista useri!");
+            return;
+        }
         Utils.tryExecute(() -> controller.getServiceUser().findAll().forEach(System.out::println));
     }
 

@@ -15,7 +15,6 @@ import java.util.List;
 public class ServiceUser {
     protected Repository<Long, User> repoUser;
     protected Repository<Long, Prietenie> repoPrietenii;
-    protected Parser<Long> idParser;
     protected static Long idGenerator = 0L;
 
     /**
@@ -23,12 +22,10 @@ public class ServiceUser {
      * initializeaza repository-urile, parserele si graful
      * @param repoUser - repository-ul de useri
      * @param repoPrietenii - repository-ul de prietenii
-     * @param idParser - parser-ul de id-uri
      */
     public ServiceUser(Repository<Long, User> repoUser, Repository<Long, Prietenie> repoPrietenii, Parser<Long> idParser) {
         this.repoUser = repoUser;
         this.repoPrietenii = repoPrietenii;
-        this.idParser = idParser;
         idGenerator = 1L;
         repoUser.findAll().stream().mapToLong(User::getId).max().ifPresent(mx -> idGenerator = mx + 1);
     }

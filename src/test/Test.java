@@ -3,6 +3,7 @@ package test;
 import controller.Controller;
 import domain.Entity;
 import domain.Prietenie;
+import domain.UserDetails;
 import exceptii.*;
 import graf.StrategiiCelMaiLungDrum;
 
@@ -17,59 +18,55 @@ public class Test {
      * @param args - args
      */
     public static void main(String[] args) {
-//        Controller controller = new Controller();
-//        // delete all users and prietenii
-//        String[] user1 = {"Numehthg", "Email1", "Pasw1"};
-//        String[] user2 = {"Nume ejfbeh jkdfb", "Email2", "Pasw2"};
-//        String[] user3 = {"Nume ejfbeh jkdfb", "Email2", "Pasw2"};
-//        String[] pr1 = {"1", "2"};
-//        String[] pr2 = {"1", "3"};
-//        String[] pr3 = {"2", "3"};
-//        String[] pr4 = {"2", "3"};
-//        String[] pr5 = {"1", "4"};
-//
-//        controller.getServiceUser().add(user1);
-//        controller.getServiceUser().add(user2);
-//        controller.getServiceUser().add(user3);
-//
-//        controller.getServicePrietenii().add(pr1);
-//        controller.getServicePrietenii().add(pr2);
-//        controller.getServicePrietenii().add(pr3);
-//        try{controller.getServicePrietenii().add(pr4);}
-//        catch (DuplicatedElementException ignored){}
-//        try{controller.getServicePrietenii().add(pr5);}
-//        catch (RepositoryException ignored){}
-//
-//        controller.getServicePrietenii().remove(pr3);
-//        try{controller.getServicePrietenii().remove(pr4);}
-//        catch (NotExistentException ignored){}
-//
-//        controller.getServiceUser().remove(new String[]{"1"});
-//        List<Prietenie>prietenii = new LinkedList<>(controller.getServicePrietenii().findAll());
-//        assert prietenii.size() == 0;
-//
-//        assert controller.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.Backtracking).getSecond() == 0;
-//
-//        controller.getServiceUser().remove(new String[]{"2"});
-//        controller.getServiceUser().remove(new String[]{"3"});
-//
-//        assert controller.getServiceUser().findAll().isEmpty();
-//        assert controller.getServicePrietenii().findAll().isEmpty();
-//
-//        controller.getServiceUser().add(user1);
-//        controller.getServiceUser().add(user2);
-//        controller.getServiceUser().add(user3);
-//
-//        try{ controller.getServicePrietenii().add(pr1);}
-//        catch (NotExistentException ignored){}
-//        controller.getServicePrietenii().add(new String[]{"4", "5"});
-//        controller.getServicePrietenii().add(new String[]{"5", "6"});
-//        controller.getServicePrietenii().add(new String[]{"4", "6"});
-//
-//        assert controller.getServiceUser().findAll().size() == 3;
-//        assert controller.getServicePrietenii().findAll().size() == 3;
-//
-//        controller.getServiceUser().remove(new String[]{"4"});
-//        assert controller.getServicePrietenii().findAll().size() == 1;
+        Controller controller = new Controller();
+        controller.clear();
+        // delete all users and prietenii
+        UserDetails user1 = new UserDetails(); user1.add("Numehthg", "Email1", "Pasw1");
+        UserDetails user2 = new UserDetails(); user2.add("Nume ejfbeh jkdfb", "Email2", "Pasw2");
+        UserDetails user3 = new UserDetails(); user3.add("Nume ejfbeh jkdfb", "Email2", "Pasw2");
+
+        controller.getServiceUser().add(user1);
+        controller.getServiceUser().add(user2);
+        controller.getServiceUser().add(user3);
+
+        controller.getServicePrietenii().add(1L, 2L);
+        controller.getServicePrietenii().add(1L, 3L);
+        controller.getServicePrietenii().add(2L, 3L);
+        try{controller.getServicePrietenii().add(2L, 3L); assert false;}
+        catch (DuplicatedElementException ignored){}
+        try{controller.getServicePrietenii().add(1L, 4L); assert false;}
+        catch (RepositoryException ignored){}
+
+        controller.getServicePrietenii().remove(3L);
+        try{controller.getServicePrietenii().remove(1L, 4L); assert false;}
+        catch (NotExistentException ignored){}
+
+        controller.getServiceUser().remove(1L);
+        assert controller.getServicePrietenii().findAll().isEmpty();
+
+        assert controller.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.Backtracking).getSecond() == 0;
+        assert controller.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.N_DFSuri).getSecond() == 0;
+
+        controller.getServiceUser().remove(2L);
+        controller.getServiceUser().remove(3L);
+
+        assert controller.getServiceUser().findAll().isEmpty();
+        assert controller.getServicePrietenii().findAll().isEmpty();
+
+        controller.getServiceUser().add(user1);
+        controller.getServiceUser().add(user2);
+        controller.getServiceUser().add(user3);
+
+        try{ controller.getServicePrietenii().add(1L, 2L); assert false;}
+        catch (NotExistentException ignored){}
+        controller.getServicePrietenii().add(4L, 5L);
+        controller.getServicePrietenii().add(5L, 6L);
+        controller.getServicePrietenii().add(4L, 6L);
+
+        assert controller.getServiceUser().findAll().size() == 3;
+        assert controller.getServicePrietenii().findAll().size() == 3;
+
+        controller.getServiceUser().remove(4L);
+        assert controller.getServicePrietenii().findAll().size() == 1;
     }
 }
