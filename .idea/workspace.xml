@@ -4,17 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="pair implementeaza pereche&#10;perechea are 2 arg template">
+    <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="service modificat&#10;add, update, findone pr&#10;TODO: UI">
+      <change afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/ApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/UserDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/UserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/parser/IdParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptii/ServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/console/AbstractUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/L3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/prietenii" beforeDir="false" afterPath="$PROJECT_DIR$/data/prietenii.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/useri" beforeDir="false" afterPath="$PROJECT_DIR$/data/useri.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/service/prietenii/ServicePrietenii.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/service/prietenii/ServicePrietenii.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/service/user/AbstractServiceUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/service/user/AbstractServiceUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/service/user/ServiceUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/service/user/ServiceUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/Prietenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Prietenie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/validation/PrietenieValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/validation/PrietenieValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/prietenii/ServicePrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/prietenii/ServicePrietenii.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/user/ServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/user/ServiceUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/memory/AbstractInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/InMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/memory/InMemoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ServiceCRUD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/prietenii/AbstractServicePrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServicePrietenii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/prietenii/ServicePrietenii.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/user/AbstractServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/user/ServiceUser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/console/UIConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/console/UIConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/console/UIUseri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/console/UIUseri.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +47,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -38,7 +61,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2GY5Bt3RgE4llR8NHinBmVANtnQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -71,20 +94,7 @@
       <recent name="service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration name="LongestComp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="graf.test.LongestComp" />
-      <module name="L3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="graf.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="L3" />
@@ -109,14 +119,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.Test" />
-      <item itemvalue="Application.LongestComp" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.LongestComp" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +162,14 @@
       <workItem from="1667494584389" duration="385000" />
       <workItem from="1667888111231" duration="51000" />
       <workItem from="1668073198505" duration="2446000" />
-      <workItem from="1668115530697" duration="5746000" />
+      <workItem from="1668115530697" duration="5904000" />
+      <workItem from="1668161085684" duration="2650000" />
+      <workItem from="1668170639750" duration="4269000" />
+      <workItem from="1668175683429" duration="4934000" />
+      <workItem from="1668193318513" duration="3963000" />
+      <workItem from="1668230791490" duration="1564000" />
+      <workItem from="1668237092915" duration="3447000" />
+      <workItem from="1668246786134" duration="1135000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1667133206595</created>
@@ -212,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668116292470</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="service modificat&#10;add, update, findone pr&#10;TODO: UI">
+      <created>1668121469290</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668121469290</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +277,8 @@
     <MESSAGE value="lab3 predat" />
     <MESSAGE value="graf generat dinamic" />
     <MESSAGE value="pair implementeaza pereche&#10;perechea are 2 arg template" />
-    <option name="LAST_COMMIT_MESSAGE" value="pair implementeaza pereche&#10;perechea are 2 arg template" />
+    <MESSAGE value="service modificat&#10;add, update, findone pr&#10;TODO: UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="service modificat&#10;add, update, findone pr&#10;TODO: UI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -266,10 +289,5 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="service" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

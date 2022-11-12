@@ -31,6 +31,20 @@ public class User extends Entity<Long> {
     }
 
     /**
+     * Constructorul cu parametri
+     * @param id - id-ul user-ului
+     * @param name - numele user-ului
+     * @param password - parola user-ului
+     * @param email - email-ul user-ului
+     */
+    public User(Long id, String name, String password, String email) {
+        super(id);
+        this.name = name;
+        this.password = password;
+        this.email = email;
+    }
+
+    /**
      * getter pentru numele user-ului
      * @return numele user-ului
      */

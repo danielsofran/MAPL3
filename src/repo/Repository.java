@@ -4,6 +4,8 @@ import domain.Entity;
 import exceptii.DuplicatedElementException;
 
 import java.util.Collection;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public interface Repository <ID, E extends Entity<ID>> {
     /**
@@ -15,9 +17,26 @@ public interface Repository <ID, E extends Entity<ID>> {
     E findOne(ID id) throws IllegalArgumentException;
 
     /**
+     * determina entitatea care respecta conditia data
+     * @param predicate - predicatul dupa care se filtreaza
+     * @return - entitatea care indeplineste predicatul
+     * @throws IllegalArgumentException - daca predicatul este null
+     */
+    E findOne(Predicate<E> predicate) throws IllegalArgumentException;
+
+    /**
      * @return toate entitatile
      */
     Collection<E> findAll();
+
+    /**
+     * gaseste entitatile care indeplinesc conditia data
+     * @param predicate - predicatul dupa care se filtreaza
+     * @return - entitatile care indeplinesc conditia
+     * @throws IllegalArgumentException - daca predicatul este null
+     */
+    Collection<E> findAll(Predicate<E> predicate) throws IllegalArgumentException;
+
     /**
      * salveaza entitatea
      * @param entity - entitatea de salvat
@@ -26,6 +45,7 @@ public interface Repository <ID, E extends Entity<ID>> {
      * @throws DuplicatedElementException - daca entitatea exista deja
      */
     E save(E entity) throws IllegalArgumentException, DuplicatedElementException;
+
     /**
      * sterge entitatea cu id-ul dat
      * @param id - id-ul entitatii de sters
@@ -35,6 +55,14 @@ public interface Repository <ID, E extends Entity<ID>> {
     E delete(ID id) throws IllegalArgumentException;
 
     /**
+     * sterge entitatea care indeplineste conditia data
+     * @param predicate - predicatul dupa care se filtreaza
+     * @return entitatea stearsa sau null daca nu exista
+     * @throws IllegalArgumentException - daca predicatul este null
+     */
+    E delete(Predicate<E> predicate) throws IllegalArgumentException;
+
+    /**
      * actualizeaza entitatea cu id-ul dat
      * @param id - id-ul entitatii de actualizat
      * @param entity - entitatea cu noile date
@@ -42,4 +70,13 @@ public interface Repository <ID, E extends Entity<ID>> {
      * @throws IllegalArgumentException - daca id-ul sau entitatea sunt null
      */
     E update(ID id, E entity) throws IllegalArgumentException;
+
+    /**
+     * actualizeaza entitatea care indeplineste conditia data
+     * @param predicate - predicatul dupa care se filtreaza
+     * @param entity - entitatea cu noile date
+     * @return entitatea actualizata sau null daca nu exista nicio entitate care sa indeplineasca conditia
+     * @throws IllegalArgumentException - daca predicatul sau entitatea sunt null
+     */
+    E update(Predicate<E> predicate, E entity) throws IllegalArgumentException;
 }

@@ -1,37 +1,38 @@
 package ui.console;
 
+import controller.Controller;
 import domain.Prietenie;
 import domain.User;
+import domain.parser.Parser;
 import graf.StrategiiCelMaiLungDrum;
-import service.Service;
 import utils.Pair;
 import utils.Utils;
 
 import java.util.Scanner;
 import java.util.Set;
 
-public class UIPrietenii {
-    private final Scanner scanner;
-    private final Service service;
-
+public class UIPrietenii extends AbstractUI {
     /**
      * Constructor pentru interfata prietenilor, seteaza service-ul si scanner-ul
-     * @param service - serviciul
+     * @param controller - controller-ul
      * @param scanner - scannerul
      */
-    public UIPrietenii(Service service, Scanner scanner) {
-        this.service = service;
-        this.scanner = scanner;
+    public UIPrietenii(Controller controller, Scanner scanner, Parser<Long> parser) {
+        super(controller, scanner, parser);
     }
 
     /**
      * Executa comanda asociata argumentelor
      * @param args - argumentele comenzii
      */
+    @Override
     public void execute(String[] args) {
-        if(args.length == 1){
-            System.out.println("Invalid command! Try one of the following:");
-            System.out.println("add, remove, update, find, findall");
+        Runnable errorMsg = () -> {
+            System.out.println("Invalid subcommand! Try one of the following:");
+            System.out.println("add, remove, update, find, findall, nrcomunitati, cmsc");
+        };
+        if(args.length < 2){
+            errorMsg.run();
             return;
         }
         switch (args[1]){
@@ -57,8 +58,7 @@ public class UIPrietenii {
                 ceaMaiSociabilaComunitate();
                 break;
             default:
-                System.out.println("Invalid subcommand! Try one of the following:");
-                System.out.println("add, remove, update, find, findall, nrcomunitati, cmsc");
+                errorMsg.run();
         }
     }
 
@@ -67,7 +67,7 @@ public class UIPrietenii {
      */
     private void ceaMaiSociabilaComunitate() {
         Utils.tryExecute(() -> {
-            Pair<Set<User>, Integer> com = service.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.Backtracking);
+            Pair<Set<User>, Integer> com = controller.getServicePrietenii().getCeaMaiSociabilaComunitate(StrategiiCelMaiLungDrum.Backtracking);
             System.out.println("Cea mai sociabila comunitate are scorul "+com.getSecond()+" si este formata din:");
             com.getFirst().forEach(System.out::println);
         });
@@ -77,26 +77,31 @@ public class UIPrietenii {
      * Numarul de comunitati
      */
     private void numarComunitati() {
-        Utils.tryExecute(() -> System.out.println("Numarul de comunitati este: " + service.getServicePrietenii().getNumarComunitati()));
+        Utils.tryExecute(() ->
+            System.out.println("Numarul de comunitati este: " + controller.getServicePrietenii().getNumarComunitati())
+        );
     }
 
     /**
      * Afiseaza toate prietenii
      */
     private void findAll() {
-        System.out.println("Prietenii:");
-        Utils.tryExecute(() -> service.getServicePrietenii().findAll().forEach(System.out::println));
+        if(!controller.getServicePrietenii().findAll().isEmpty()) {
+            System.out.println("Prietenii:");
+            Utils.tryExecute(() -> controller.getServicePrietenii().findAll().forEach(System.out::println));
+        }
+        else {
+            System.err.println("Nu exista nici o prietenie!");
+        }
     }
 
     /**
      * Afiseaza o prietenie
      */
     private void findPrietenie() {
-        String[] params = new String[1];
-        System.out.print("Id: ");
-        params[0] = scanner.nextLine().trim();
         Utils.tryExecute(() -> {
-            Prietenie prietenie = service.getServicePrietenii().findOne(params);
+            Long id = readId("Id-ul prieteniei:");
+            Prietenie prietenie = controller.getServicePrietenii().findOne(id);
             System.out.println(prietenie);
         });
     }
@@ -105,39 +110,32 @@ public class UIPrietenii {
      * Actualizeaza o prietenie
      */
     private void updatePrietenie() {
-        String[] params = new String[4];
-        System.out.print("Old Id: ");
-        params[0] = scanner.nextLine().trim();
-        System.out.print("Id: ");
-        params[1] = scanner.nextLine().trim();
-        System.out.print("Id User 1: ");
-        params[2] = scanner.nextLine().trim();
-        System.out.print("Id User 2: ");
-        params[3] = scanner.nextLine().trim();
-        Utils.tryExecute(() -> service.getServicePrietenii().add(params));
+        Utils.tryExecute(() -> {
+            Long id = readId("Id prietenie:");
+            Long id1 = readId("Id user 1:");
+            Long id2 = readId("Id user 2:");
+            controller.getServicePrietenii().update(id, id1, id2);
+        });
     }
 
     /**
      * Sterge o prietenie
      */
     private void removePrietenie() {
-        String[] params = new String[1];
-        System.out.print("Id: ");
-        params[0] = scanner.nextLine().trim();
-        Utils.tryExecute(() -> service.getServicePrietenii().remove(params));
+        Utils.tryExecute(() -> {
+            Long id = readId(null);
+            controller.getServicePrietenii().remove(id);
+        });
     }
 
     /**
      * Adauga o prietenie
      */
     private void addPrietenie() {
-        String[] params = new String[3];
-        System.out.print("Id: ");
-        params[0] = scanner.nextLine().trim();
-        System.out.print("Id User 1: ");
-        params[1] = scanner.nextLine().trim();
-        System.out.print("Id User 2: ");
-        params[2] = scanner.nextLine().trim();
-        Utils.tryExecute(() -> service.getServicePrietenii().add(params));
+        Utils.tryExecute(() -> {
+            Long id1 = readId("Id user 1:");
+            Long id2 = readId("Id user 2:");
+            controller.getServicePrietenii().add(id1, id2);
+        });
     }
 }

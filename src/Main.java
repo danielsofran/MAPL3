@@ -1,7 +1,7 @@
+import controller.Controller;
 import domain.Entity;
 import domain.User;
 import domain.validation.Validator;
-import service.Service;
 import ui.console.UIConsole;
 
 import java.util.*;
@@ -12,8 +12,8 @@ public class Main {
      * @param args - argumentele
      */
     public static void main(String[] args) {
-        Service service = new Service();
-        UIConsole uiConsole = new UIConsole(service);
+        Controller controller = new Controller();
+        UIConsole uiConsole = new UIConsole(controller);
         uiConsole.run();
     }
 }

@@ -85,6 +85,26 @@ public class Prietenie extends Entity<Long> implements Pereche<Long, Long> {
     }
 
     /**
+     * verifica daca unul dintre userii prieteniei are id-ul dat
+     * @param id - id-ul dat
+     * @return true - daca unul dintre userii prieteniei are id-ul dat
+     */
+    public boolean contains(Long id){
+        return id_user1.equals(id) || id_user2.equals(id);
+    }
+
+    /**
+     * verifica daca prietenia are cei doi useri cu id-urile id1 si id2
+     * @apiNote nu conteaza ordinea id-urilor
+     * @param id1 - id-ul primului user
+     * @param id2 - id-ul celui de-al doilea user
+     * @return true - daca prietenia are cei doi useri cu id-urile id1 si id2
+     */
+    public boolean contains(Long id1, Long id2){
+        return (id_user1.equals(id1) && id_user2.equals(id2)) || (id_user1.equals(id2) && id_user2.equals(id1));
+    }
+
+    /**
      * verifica daca doua prietenii sunt identice
      * @param o - prietenia cu care se compara
      * @return true daca sunt egale, false altfel
@@ -95,7 +115,8 @@ public class Prietenie extends Entity<Long> implements Pereche<Long, Long> {
         if (o == null || getClass() != o.getClass()) return false;
         Prietenie prietenie = (Prietenie) o;
         return getId().equals(prietenie.getId()) ||
-                id_user1.equals(prietenie.id_user1) && id_user2.equals(prietenie.id_user2);
+                id_user1.equals(prietenie.id_user1) && id_user2.equals(prietenie.id_user2) ||
+                id_user1.equals(prietenie.id_user2) && id_user2.equals(prietenie.id_user1);
     }
 
     /**

@@ -31,7 +31,7 @@ public abstract class Parser<T> {
      * @return Long - id-ul
      * @throws ParsingException - daca parsarea nu este posibila
      */
-    public Long parseId(String string) throws ParsingException {
+    protected Long parseId(String string) throws ParsingException {
         long id;
         try{
             id = Long.parseLong(string);
