@@ -1,12 +1,16 @@
 package domain;
 
 import utils.Pereche;
+import utils.Utils;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Prietenie extends Entity<Long> implements Pereche<Long, Long> {
     private Long id_user1;
     private Long id_user2;
+    private LocalDateTime friendsFrom;
+    private PrietenieState state;
 
     /**
      * Constructorul implicit
@@ -14,38 +18,17 @@ public class Prietenie extends Entity<Long> implements Pereche<Long, Long> {
     public Prietenie(){}
 
     /**
-     * Constructorul cu parametri
-     * @param user1 - primul user
-     * @param user2 - al doilea user
-     */
-    public Prietenie(User user1, User user2){
-        super();
-        id_user1 = user1.getId();
-        id_user2 = user2.getId();
-    }
-
-    /**
-     * Construcor cu parametri
-     * @param id - id-ul prieteniei
-     * @param user1 - primul user
-     * @param user2 - al doilea user
-     */
-    public Prietenie(Long id, User user1, User user2){
-        super(id);
-        id_user1 = user1.getId();
-        id_user2 = user2.getId();
-    }
-
-    /**
      * Constructor cu parametri
      * @param id - id-ul prieteniei
      * @param id1 - id-ul primului user
      * @param id2 - id-ul celui de-al doilea user
      */
-    public Prietenie(Long id, Long id1, Long id2) {
+    public Prietenie(Long id, Long id1, Long id2, LocalDateTime friendsFrom, PrietenieState state) {
         super(id);
         id_user1 = id1;
         id_user2 = id2;
+        this.friendsFrom = friendsFrom;
+        this.state = state;
     }
 
     /**
@@ -67,6 +50,24 @@ public class Prietenie extends Entity<Long> implements Pereche<Long, Long> {
     }
 
     /**
+     * getter pentru momentul de cand cei doi useri sunt prieteni
+     * @return - mometnul de cand cei doi useri sunt prieteni
+     */
+    public LocalDateTime getFriendsFrom() {
+        return friendsFrom;
+    }
+
+    /**
+     * getter pentru starea prieteniei
+     * Accepted - cei doi utilizatori sunt prieteni
+     * Pending - primul utilizator i-a trimis cerere celui de-al doilea
+     * @return - starea prieteniei
+     */
+    public PrietenieState getState(){
+        return state;
+    }
+
+    /**
      * setter pentru primul user
      * @param user1 - id-ul primului user
      */
@@ -82,6 +83,22 @@ public class Prietenie extends Entity<Long> implements Pereche<Long, Long> {
     @Override
     public void setSecond(Long user2) {
         this.id_user2 = user2;
+    }
+
+    /**
+     * setter pentru momentul de cand are loc prietenia
+     * @param friendsFrom - momentul respectiv
+     */
+    public void setFriendsFrom(LocalDateTime friendsFrom) {
+        this.friendsFrom = friendsFrom;
+    }
+
+    /**
+     * setter pentru starea prieteniei
+     * @param state - starea prieteniei
+     */
+    public void setState(PrietenieState state) {
+        this.state = state;
     }
 
     /**
@@ -134,6 +151,6 @@ public class Prietenie extends Entity<Long> implements Pereche<Long, Long> {
      */
     @Override
     public String toString() {
-        return "User-ul cu id-ul " + id_user1 + " este prieten cu userul cu id-ul " + id_user2;
+        return "id: " + id_user1 + " - id: " + id_user2 + " din \'" + friendsFrom.format(Utils.DATE_TIME_FORMATTER) + '\'';
     }
 }

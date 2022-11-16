@@ -2,12 +2,16 @@ package ui.console;
 
 import controller.Controller;
 import domain.Prietenie;
+import domain.PrietenieState;
 import domain.User;
 import domain.parser.Parser;
+import exceptii.ParsingException;
 import graf.StrategiiCelMaiLungDrum;
 import utils.Pair;
 import utils.Utils;
 
+import java.time.DateTimeException;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -18,7 +22,7 @@ public class UIPrietenii extends AbstractUI {
      * @param scanner - scannerul
      */
     public UIPrietenii(Controller controller, Scanner scanner, Parser<Long> parser) {
-        super(controller, scanner, parser);
+        super(controller, scanner);
     }
 
     /**
@@ -88,7 +92,11 @@ public class UIPrietenii extends AbstractUI {
     private void findAll() {
         if(!controller.getServicePrietenii().findAll().isEmpty()) {
             System.out.println("Prietenii:");
-            Utils.tryExecute(() -> controller.getServicePrietenii().findAll().forEach(System.out::println));
+            Utils.tryExecute(() -> controller.getServicePrietenii().findAll().forEach(prietenie -> {
+                User user1 = controller.getServiceUser().findOne(prietenie.getFirst());
+                User user2 = controller.getServiceUser().findOne(prietenie.getSecond());
+                System.out.println(prietenie.getId()+". " + user1.getName() + " este prieten cu " + user2.getName() + " din \'"+prietenie.getFriendsFrom().format(Utils.DATE_TIME_FORMATTER)+'\'');
+            }));
         }
         else {
             System.err.println("Nu exista nici o prietenie!");
@@ -114,7 +122,8 @@ public class UIPrietenii extends AbstractUI {
             Long id = readId("Id prietenie:");
             Long id1 = readId("Id user 1:");
             Long id2 = readId("Id user 2:");
-            controller.getServicePrietenii().update(id, id1, id2);
+            LocalDateTime moment = readDateTime();
+            controller.getServicePrietenii().update(id, id1, id2, null, PrietenieState.Accepted);
         });
     }
 
@@ -135,7 +144,36 @@ public class UIPrietenii extends AbstractUI {
         Utils.tryExecute(() -> {
             Long id1 = readId("Id user 1:");
             Long id2 = readId("Id user 2:");
-            controller.getServicePrietenii().add(id1, id2);
+            controller.getServicePrietenii().add(id1, id2, LocalDateTime.now(), PrietenieState.Accepted);
         });
+    }
+
+    /**
+     * citeste un LocalDateTime de la tastatura si il parseaza
+     * @return - un moment valid, sau null daca acesta se doreste a fi neschimbat de la tastatura
+     * @throws ParsingException - daca intregii introdusi nu sunt valizi pentru a creea un moment
+     */
+    private LocalDateTime readDateTime(){
+        System.out.println("Do you want to update the moment? [Yes/No]");
+        if(scanner.next().matches("^[yY]*"))
+        {
+            System.out.println("Do you want to use now for the moment of friendship? [Yes/No]");
+            if(scanner.next().matches("^[yY]*"))
+                return LocalDateTime.now();
+            int year, month, day, hour, minute;
+            System.out.print("Introduceti anul: ");
+            year = scanner.nextInt();
+            System.out.print("Introduceti luna: ");
+            month = scanner.nextInt();
+            System.out.print("Introduceti ziua: ");
+            day = scanner.nextInt();
+            System.out.print("Introduceti ora: ");
+            hour = scanner.nextInt();
+            System.out.print("Introduceti minutul: ");
+            minute = scanner.nextInt();
+            try { return LocalDateTime.of(year, month, day, hour, minute); }
+            catch (DateTimeException ex) { throw new ParsingException("Acest moment nu este valid!"); }
+        }
+        return null;
     }
 }

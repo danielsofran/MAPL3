@@ -9,7 +9,6 @@ import domain.validation.PrietenieValidator;
 import domain.validation.UserValidator;
 import domain.validation.Validator;
 import repo.FileRepository;
-import repo.InMemoryRepository;
 import repo.Repository;
 import service.ServicePrietenii;
 import service.ServiceUser;
@@ -35,8 +34,8 @@ public class Controller {
         String prieteniiFile = ApplicationContext.getPROPERTIES().getProperty("file.prietenii");
         repoUser = new FileRepository<>(validatorUser, useriFile);
         repoPrietenii = new FileRepository<>(validatorPrietenie, prieteniiFile);
-        userService = new ServiceUser(repoUser, repoPrietenii, idParser);
-        prietenieService = new ServicePrietenii(repoPrietenii, repoUser, idParser);
+        userService = new ServiceUser(repoUser, repoPrietenii);
+        prietenieService = new ServicePrietenii(repoPrietenii, repoUser);
     }
 
     /**

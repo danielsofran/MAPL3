@@ -1,16 +1,12 @@
 package test;
 
 import controller.Controller;
-import domain.Entity;
-import domain.Prietenie;
+import domain.PrietenieState;
 import domain.UserDetails;
 import exceptii.*;
 import graf.StrategiiCelMaiLungDrum;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
+import java.time.LocalDateTime;
 
 public class Test {
     /**
@@ -20,7 +16,7 @@ public class Test {
     public static void main(String[] args) {
         Controller controller = new Controller();
         controller.clear();
-        // delete all users and prietenii
+
         UserDetails user1 = new UserDetails(); user1.add("Numehthg", "Email1", "Pasw1");
         UserDetails user2 = new UserDetails(); user2.add("Nume ejfbeh jkdfb", "Email2", "Pasw2");
         UserDetails user3 = new UserDetails(); user3.add("Nume ejfbeh jkdfb", "Email2", "Pasw2");
@@ -29,12 +25,12 @@ public class Test {
         controller.getServiceUser().add(user2);
         controller.getServiceUser().add(user3);
 
-        controller.getServicePrietenii().add(1L, 2L);
-        controller.getServicePrietenii().add(1L, 3L);
-        controller.getServicePrietenii().add(2L, 3L);
-        try{controller.getServicePrietenii().add(2L, 3L); assert false;}
+        controller.getServicePrietenii().add(1L, 2L, LocalDateTime.now(), PrietenieState.Accepted);
+        controller.getServicePrietenii().add(1L, 3L, LocalDateTime.now(), PrietenieState.Accepted);
+        controller.getServicePrietenii().add(2L, 3L, LocalDateTime.now(), PrietenieState.Accepted);
+        try{controller.getServicePrietenii().add(2L, 3L, LocalDateTime.now(), PrietenieState.Accepted); assert false;}
         catch (DuplicatedElementException ignored){}
-        try{controller.getServicePrietenii().add(1L, 4L); assert false;}
+        try{controller.getServicePrietenii().add(1L, 4L, LocalDateTime.now(), PrietenieState.Accepted); assert false;}
         catch (RepositoryException ignored){}
 
         controller.getServicePrietenii().remove(3L);
@@ -57,11 +53,11 @@ public class Test {
         controller.getServiceUser().add(user2);
         controller.getServiceUser().add(user3);
 
-        try{ controller.getServicePrietenii().add(1L, 2L); assert false;}
+        try{ controller.getServicePrietenii().add(1L, 2L, LocalDateTime.now(), PrietenieState.Accepted); assert false;}
         catch (NotExistentException ignored){}
-        controller.getServicePrietenii().add(4L, 5L);
-        controller.getServicePrietenii().add(5L, 6L);
-        controller.getServicePrietenii().add(4L, 6L);
+        controller.getServicePrietenii().add(4L, 5L, LocalDateTime.now(), PrietenieState.Accepted);
+        controller.getServicePrietenii().add(5L, 6L, LocalDateTime.now(), PrietenieState.Accepted);
+        controller.getServicePrietenii().add(4L, 6L, LocalDateTime.now(), PrietenieState.Accepted);
 
         assert controller.getServiceUser().findAll().size() == 3;
         assert controller.getServicePrietenii().findAll().size() == 3;

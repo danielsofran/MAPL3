@@ -1,8 +1,8 @@
 package service;
 
 import domain.Prietenie;
+import domain.PrietenieState;
 import domain.User;
-import domain.parser.Parser;
 import exceptii.DuplicatedElementException;
 import exceptii.NotExistentException;
 import exceptii.ServiceException;
@@ -12,6 +12,7 @@ import graf.StrategiiCelMaiLungDrum;
 import repo.Repository;
 import utils.Pair;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -23,10 +24,11 @@ public class ServicePrietenii {
     /**
      * Constructorul clasei ServicePrietenii
      * initializeaza repository-urile, parserele si graful
+     *
      * @param repoPrietenii - repository-ul de prietenii
-     * @param repoUser - repository-ul de useri
+     * @param repoUser      - repository-ul de useri
      */
-    public ServicePrietenii(Repository<Long, Prietenie> repoPrietenii, Repository<Long, User> repoUser, Parser<Long> idParser) {
+    public ServicePrietenii(Repository<Long, Prietenie> repoPrietenii, Repository<Long, User> repoUser) {
         this.repoPrietenii = repoPrietenii;
         this.repoUser = repoUser;
         idGenerator = 1L;
@@ -35,13 +37,16 @@ public class ServicePrietenii {
 
     /**
      * adauga o prietenie in repository
-     * @param id1 - id-ul primului user
-     * @param id2 - id-ul celui de-al doilea user
+     *
+     * @param id1            - id-ul primului user
+     * @param id2            - id-ul celui de-al doilea user
+     * @param friendsFrom    - momentul de cand prietenia are loc
+     * @param prietenieState - starea prieteniei
      */
-    public void add(Long id1, Long id2) {
+    public void add(Long id1, Long id2, LocalDateTime friendsFrom, PrietenieState prietenieState) {
         if (repoUser.findOne(id1) == null || repoUser.findOne(id2) == null)
             throw new NotExistentException("Unul dintre useri nu exista!");
-        Prietenie prietenie = new Prietenie(idGenerator, id1, id2);
+        Prietenie prietenie = new Prietenie(idGenerator, id1, id2, friendsFrom, prietenieState);
         if (repoPrietenii.findOne(pr -> pr.equals(prietenie)) != null)
             throw new DuplicatedElementException("Prietenia exista deja!");
         repoPrietenii.save(prietenie);
@@ -70,16 +75,21 @@ public class ServicePrietenii {
 
     /**
      * modifica o prietenie din repository
-     * @param id - id-ul prieteniei de modificat
-     * @param id1 - noul id al primului user
-     * @param id2 - noul id al celui de-al doilea user
+     *
+     * @param id             - id-ul prieteniei de modificat
+     * @param id1            - noul id al primului user
+     * @param id2            - noul id al celui de-al doilea user
+     * @param friendsFrom    - momentul din care are loc prietenia
+     * @param prietenieState - starea prieteniei
      * @apiNote id-ul prieteniei nu se poate modifica
      */
-    public void update(Long id, Long id1, Long id2) {
+    public void update(Long id, Long id1, Long id2, LocalDateTime friendsFrom, PrietenieState prietenieState) {
         Prietenie oldPrietenie = repoPrietenii.findOne(id);
         if (oldPrietenie == null)
             throw new NotExistentException("Prietenia nu exista!");
-        Prietenie newPrietenie = new Prietenie(id, id1, id2);
+        if(friendsFrom == null)
+            friendsFrom = oldPrietenie.getFriendsFrom();
+        Prietenie newPrietenie = new Prietenie(id, id1, id2, friendsFrom, prietenieState);
         repoPrietenii.update(id, newPrietenie);
     }
 

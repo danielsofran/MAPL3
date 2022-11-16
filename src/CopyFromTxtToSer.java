@@ -32,20 +32,28 @@ public class CopyFromTxtToSer {
         }
     }
 
-    public static void main(String[] args) {
+    static void copyUsers(){
         String pathUseriTxt = "./data/useri.txt";
-        String pathPrieteniiTxt = "./data/prietenii.txt";
         String pathUseriSer = ApplicationContext.getPROPERTIES().getProperty("file.useri");
-        String pathPrieteniiSer = ApplicationContext.getPROPERTIES().getProperty("file.prietenii");
         InMemoryRepository<Long, User> useriRepo = new InMemoryRepository<>(new UserValidator());
-        InMemoryRepository<Long, Prietenie> prieteniiRepo = new InMemoryRepository<>(new PrietenieValidator());
         Parser<User> userParser = new UserParser();
-        Parser<Prietenie> prietenieParser = new PrietenieParser();
         copyFromTxt(useriRepo, pathUseriTxt, userParser);
-        copyFromTxt(prieteniiRepo, pathPrieteniiTxt, prietenieParser);
         FileRepository<Long, User> useriFileRepo = new FileRepository<>(new UserValidator(), pathUseriSer);
-        FileRepository<Long, Prietenie> prieteniiFileRepo = new FileRepository<>(new PrietenieValidator(), pathPrieteniiSer);
         useriRepo.findAll().forEach(useriFileRepo::save);
+    }
+
+    static void copyPrietenii(){
+        String pathPrieteniiTxt = "./data/prietenii.txt";
+        String pathPrieteniiSer = ApplicationContext.getPROPERTIES().getProperty("file.prietenii");
+        InMemoryRepository<Long, Prietenie> prieteniiRepo = new InMemoryRepository<>(new PrietenieValidator());
+        Parser<Prietenie> prietenieParser = new PrietenieParser();
+        copyFromTxt(prieteniiRepo, pathPrieteniiTxt, prietenieParser);
+        FileRepository<Long, Prietenie> prieteniiFileRepo = new FileRepository<>(new PrietenieValidator(), pathPrieteniiSer);
         prieteniiRepo.findAll().forEach(prieteniiFileRepo::save);
+    }
+
+    public static void main(String[] args) {
+        //copyUsers();
+        //copyPrietenii();
     }
 }

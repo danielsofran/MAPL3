@@ -7,8 +7,6 @@ import domain.UserDetails;
 import domain.parser.Parser;
 import utils.Utils;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class UIUseri extends AbstractUI {
@@ -18,7 +16,7 @@ public class UIUseri extends AbstractUI {
      * @param scanner - scannerul
      */
     public UIUseri(Controller controller, Scanner scanner, Parser<Long> parser) {
-        super(controller, scanner, parser);
+        super(controller, scanner);
     }
 
     /**
