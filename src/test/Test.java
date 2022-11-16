@@ -1,6 +1,7 @@
 package test;
 
 import controller.Controller;
+import controller.ControllerOption;
 import domain.PrietenieState;
 import domain.UserDetails;
 import exceptii.*;
@@ -14,7 +15,7 @@ public class Test {
      * @param args - args
      */
     public static void main(String[] args) {
-        Controller controller = new Controller();
+        Controller controller = new Controller(ControllerOption.Test);
         controller.clear();
 
         UserDetails user1 = new UserDetails(); user1.add("Numehthg", "Email1", "Pasw1");

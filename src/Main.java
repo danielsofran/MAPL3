@@ -1,4 +1,5 @@
 import controller.Controller;
+import controller.ControllerOption;
 import domain.Entity;
 import domain.User;
 import domain.validation.Validator;
@@ -12,7 +13,7 @@ public class Main {
      * @param args - argumentele
      */
     public static void main(String[] args) {
-        Controller controller = new Controller();
+        Controller controller = new Controller(ControllerOption.Release);
         UIConsole uiConsole = new UIConsole(controller);
         uiConsole.run();
     }

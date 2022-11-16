@@ -9,6 +9,7 @@ import domain.validation.PrietenieValidator;
 import domain.validation.UserValidator;
 import domain.validation.Validator;
 import repo.FileRepository;
+import repo.InMemoryRepository;
 import repo.Repository;
 import service.ServicePrietenii;
 import service.ServiceUser;
@@ -24,16 +25,20 @@ public class Controller {
      * Constructorul clasei Service
      * initializeaza parserele, validatoarele, repository-urile, graful si serviciile
      */
-    public Controller(){
+    public Controller(ControllerOption option){
         Parser<Long> idParser = new IdParser();
         Validator<User> validatorUser = new UserValidator();
         Validator<Prietenie> validatorPrietenie = new PrietenieValidator();
-//        repoUser = new InMemoryRepository<>(validatorUser);
-//        repoPrietenii = new InMemoryRepository<>(validatorPrietenie);
-        String useriFile = ApplicationContext.getPROPERTIES().getProperty("file.useri");
-        String prieteniiFile = ApplicationContext.getPROPERTIES().getProperty("file.prietenii");
-        repoUser = new FileRepository<>(validatorUser, useriFile);
-        repoPrietenii = new FileRepository<>(validatorPrietenie, prieteniiFile);
+        if(option == ControllerOption.Test) {
+            repoUser = new InMemoryRepository<>(validatorUser);
+            repoPrietenii = new InMemoryRepository<>(validatorPrietenie);
+        }
+        else {
+            String useriFile = ApplicationContext.getPROPERTIES().getProperty("file.useri");
+            String prieteniiFile = ApplicationContext.getPROPERTIES().getProperty("file.prietenii");
+            repoUser = new FileRepository<>(validatorUser, useriFile);
+            repoPrietenii = new FileRepository<>(validatorPrietenie, prieteniiFile);
+        }
         userService = new ServiceUser(repoUser, repoPrietenii);
         prietenieService = new ServicePrietenii(repoPrietenii, repoUser);
     }
