@@ -3,13 +3,11 @@ package repo;
 import domain.Entity;
 import domain.validation.Validator;
 import exceptii.DuplicatedElementException;
-import repo.Repository;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class InMemoryRepository <ID, E extends Entity<ID>> implements Repository<ID, E> {
     protected Map<ID, E> entities;
@@ -55,19 +53,6 @@ public class InMemoryRepository <ID, E extends Entity<ID>> implements Repository
     @Override
     public Collection<E> findAll() {
         return entities.values();
-    }
-
-    /**
-     * gaseste entitatile care indeplinesc conditia data
-     * @param predicate - predicatul dupa care se filtreaza
-     * @return - entitatile care indeplinesc conditia
-     * @throws IllegalArgumentException - daca predicatul este null
-     */
-    @Override
-    public Collection<E> findAll(Predicate<E> predicate) {
-        if(predicate == null)
-            throw new IllegalArgumentException("predicate must be not null");
-        return entities.values().stream().filter(predicate).collect(Collectors.toList());
     }
 
     /**
@@ -135,26 +120,6 @@ public class InMemoryRepository <ID, E extends Entity<ID>> implements Repository
         E old = entities.get(id);
         if(old != null)
             entities.replace(id, entity);
-        return old;
-    }
-
-    /**
-     * actualizeaza entitatea care indeplineste conditia data
-     * @param predicate - predicatul dupa care se filtreaza
-     * @param entity - entitatea cu noile date
-     * @return entitatea inainte de actualizare sau null daca nu exista
-     * @throws IllegalArgumentException - daca predicatul sau entitatea sunt null
-     */
-    @Override
-    public E update(Predicate<E> predicate, E entity) {
-        if(predicate == null)
-            throw new IllegalArgumentException("predicate must be not null");
-        if(entity == null)
-            throw new IllegalArgumentException("entity must be not null");
-        validator.validate(entity);
-        E old = entities.values().stream().filter(predicate).findFirst().orElse(null);
-        if(old != null)
-            entities.put(old.getId(), entity);
         return old;
     }
 

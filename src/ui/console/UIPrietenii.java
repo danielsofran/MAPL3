@@ -123,7 +123,7 @@ public class UIPrietenii extends AbstractUI {
             Long id1 = readId("Id user 1:");
             Long id2 = readId("Id user 2:");
             LocalDateTime moment = readDateTime();
-            controller.getServicePrietenii().update(id, id1, id2, null, PrietenieState.Accepted);
+            controller.getServicePrietenii().update(id, id1, id2, moment, PrietenieState.Accepted);
         });
     }
 

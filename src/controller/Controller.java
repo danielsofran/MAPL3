@@ -9,8 +9,9 @@ import domain.validation.PrietenieValidator;
 import domain.validation.UserValidator;
 import domain.validation.Validator;
 import repo.FileRepository;
-import repo.InMemoryRepository;
+import repo.PrietenieRepoDB;
 import repo.Repository;
+import repo.UserRepoDB;
 import service.ServicePrietenii;
 import service.ServiceUser;
 
@@ -25,20 +26,21 @@ public class Controller {
      * Constructorul clasei Service
      * initializeaza parserele, validatoarele, repository-urile, graful si serviciile
      */
-    public Controller(ControllerOption option){
+    public Controller(){
         Parser<Long> idParser = new IdParser();
         Validator<User> validatorUser = new UserValidator();
         Validator<Prietenie> validatorPrietenie = new PrietenieValidator();
-        if(option == ControllerOption.Test) {
-            repoUser = new InMemoryRepository<>(validatorUser);
-            repoPrietenii = new InMemoryRepository<>(validatorPrietenie);
-        }
-        else {
-            String useriFile = ApplicationContext.getPROPERTIES().getProperty("file.useri");
-            String prieteniiFile = ApplicationContext.getPROPERTIES().getProperty("file.prietenii");
-            repoUser = new FileRepository<>(validatorUser, useriFile);
-            repoPrietenii = new FileRepository<>(validatorPrietenie, prieteniiFile);
-        }
+//        repoUser = new InMemoryRepository<>(validatorUser);
+//        repoPrietenii = new InMemoryRepository<>(validatorPrietenie);
+//        String useriFile = ApplicationContext.getPROPERTIES().getProperty("file.useri");
+//        String prieteniiFile = ApplicationContext.getPROPERTIES().getProperty("file.prietenii");
+//        repoUser = new FileRepository<>(validatorUser, useriFile);
+//        repoPrietenii = new FileRepository<>(validatorPrietenie, prieteniiFile);
+        String url = ApplicationContext.getPROPERTIES().getProperty("db.url");
+        String user = ApplicationContext.getPROPERTIES().getProperty("db.username");
+        String pwd = ApplicationContext.getPROPERTIES().getProperty("db.password");
+        repoUser = new UserRepoDB(validatorUser, url, user, pwd);
+        repoPrietenii = new PrietenieRepoDB(validatorPrietenie, url, user, pwd);
         userService = new ServiceUser(repoUser, repoPrietenii);
         prietenieService = new ServicePrietenii(repoPrietenii, repoUser);
     }

@@ -25,6 +25,7 @@ public class User extends Entity<Long> {
      * @param email - email-ul user-ului
      */
     public User(String name, String password, String email) {
+        super();
         this.name = name;
         this.password = password;
         this.email = email;

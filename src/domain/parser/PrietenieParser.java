@@ -1,6 +1,7 @@
 package domain.parser;
 
 import domain.Prietenie;
+import domain.PrietenieState;
 import utils.Utils;
 
 import java.time.LocalDateTime;
@@ -24,6 +25,7 @@ public class PrietenieParser extends Parser<Prietenie>{
         DateTimeFormatter formatter = Utils.DATE_TIME_FORMATTER;
         LocalDateTime dateTime = LocalDateTime.parse(strings[3], formatter);
         prietenie.setFriendsFrom(dateTime);
+        prietenie.setState(PrietenieState.Accepted);
         return prietenie;
     }
 }

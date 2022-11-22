@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="repofile tested, cofig error hardcoded">
-      <change afterPath="$PROJECT_DIR$/src/controller/ControllerOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_2_2022_9_28_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_2_2022_9_28_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="44e7e5b5-f9b5-4868-ac6d-761c6647ac21" name="Changes" comment="added prietenie time">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/postgresql_42_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repo/AbstractRepoDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repo/PrietenieRepoDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repo/UserRepoDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/TestDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/L3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/prietenii.ser" beforeDir="false" afterPath="$PROJECT_DIR$/data/prietenii.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/useri.ser" beforeDir="false" afterPath="$PROJECT_DIR$/data/useri.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CopyFromTxtToSer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/RepoMigrate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/parser/PrietenieParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/FileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/FileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/InMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/InMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repo/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repo/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/console/UIPrietenii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +75,16 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -73,17 +96,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="CopyFromTxtToSer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CopyFromTxtToSer" />
-      <module name="L3" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="L3" />
       <option name="PROGRAM_PARAMETERS" value="12" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RepoMigrate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.RepoMigrate" />
+      <module name="L3" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,15 +125,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.TestDB" />
+      <module name="L3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.CopyFromTxtToSer" />
+      <item itemvalue="Application.RepoMigrate" />
+      <item itemvalue="Application.TestDB" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.CopyFromTxtToSer" />
+        <item itemvalue="Application.RepoMigrate" />
+        <item itemvalue="Application.TestDB" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -160,8 +198,16 @@
       <workItem from="1668251795686" duration="7644000" />
       <workItem from="1668493577042" duration="19000" />
       <workItem from="1668534763094" duration="584000" />
-      <workItem from="1668578681527" duration="6871000" />
-      <workItem from="1668625378813" duration="1575000" />
+      <workItem from="1668578681527" duration="7032000" />
+      <workItem from="1668775079188" duration="1381000" />
+      <workItem from="1668776487945" duration="296000" />
+      <workItem from="1668889308979" duration="100000" />
+      <workItem from="1668950365661" duration="11429000" />
+      <workItem from="1668980403484" duration="781000" />
+      <workItem from="1668981200234" duration="5526000" />
+      <workItem from="1669100413786" duration="55000" />
+      <workItem from="1669135721301" duration="1792000" />
+      <workItem from="1669137655849" duration="530000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1667133206595</created>
@@ -226,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668121469290</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added prietenie time">
+      <created>1668585667179</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668585667179</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +323,8 @@
     <MESSAGE value="graf generat dinamic" />
     <MESSAGE value="pair implementeaza pereche&#10;perechea are 2 arg template" />
     <MESSAGE value="service modificat&#10;add, update, findone pr&#10;TODO: UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="service modificat&#10;add, update, findone pr&#10;TODO: UI" />
+    <MESSAGE value="added prietenie time" />
+    <option name="LAST_COMMIT_MESSAGE" value="added prietenie time" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,6 +333,14 @@
           <properties class="exceptii.ParsingException" package="exceptii" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/service/ServicePrietenii.java</url>
+          <line>34</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

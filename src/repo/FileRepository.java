@@ -3,15 +3,12 @@ package repo;
 import domain.Entity;
 import domain.validation.Validator;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class FileRepository<ID, E extends Entity<ID>> extends InMemoryRepository<ID, E>{
     protected String path;
@@ -99,18 +96,6 @@ public class FileRepository<ID, E extends Entity<ID>> extends InMemoryRepository
     @Override
     public E update(ID id, E entity) {
         E updatedEntity = super.update(id, entity);
-        writeToFile();
-        return updatedEntity;
-    }
-
-    /**
-     * determina entitatea care respecta conditia data
-     * @param predicate - predicatul dupa care se filtreaza
-     * @return - entitatea care indeplineste predicatul sau null daca nu exista
-     */
-    @Override
-    public E update(Predicate<E> predicate, E entity) {
-        E updatedEntity = super.update(predicate, entity);
         writeToFile();
         return updatedEntity;
     }
