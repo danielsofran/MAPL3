@@ -26,7 +26,7 @@ public class Controller {
      * Constructorul clasei Service
      * initializeaza parserele, validatoarele, repository-urile, graful si serviciile
      */
-    public Controller(){
+    public Controller() {
         Parser<Long> idParser = new IdParser();
         Validator<User> validatorUser = new UserValidator();
         Validator<Prietenie> validatorPrietenie = new PrietenieValidator();

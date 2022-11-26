@@ -13,7 +13,7 @@ public class Main {
      * @param args - argumentele
      */
     public static void main(String[] args) {
-        Controller controller = new Controller(ControllerOption.Release);
+        Controller controller = new Controller();
         UIConsole uiConsole = new UIConsole(controller);
         uiConsole.run();
     }

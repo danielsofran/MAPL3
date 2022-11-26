@@ -15,7 +15,7 @@ public class Test {
      * @param args - args
      */
     public static void main(String[] args) {
-        Controller controller = new Controller(ControllerOption.Test);
+        Controller controller = new Controller();
         controller.clear();
 
         UserDetails user1 = new UserDetails(); user1.add("Numehthg", "Email1", "Pasw1");

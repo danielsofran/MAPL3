@@ -45,8 +45,8 @@ public class PrietenieRepoDB implements Repository<Long, Prietenie> {
         Long id1 = resultSet.getLong("id_user1");
         Long id2 = resultSet.getLong("id_user2");
         LocalDate data = resultSet.getDate("data").toLocalDate();
-        LocalTime ora = resultSet.getTime("ora").toLocalTime();
-        PrietenieState status = PrietenieState.valueOf(resultSet.getString("status"));
+        LocalTime ora = resultSet.getTime("time").toLocalTime();
+        PrietenieState status = PrietenieState.valueOf(resultSet.getString("prietenieState"));
         return new Prietenie(id, id1, id2, LocalDateTime.of(data, ora), status);
     }
 
